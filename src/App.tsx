@@ -43,16 +43,28 @@ import ProgramsBody from './components/ProgramsBody';
 import ScrollUp from './components/ScrollUp';
 import Preloader from './components/Preloader';
 
-function App() {
+import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    RouterProvider,
+    Route,
+    Routes
+  } from "react-router-dom";
+  
+import IndexBody from './components/IndexBody';
 
-  return (
+function App() {
+let router = createBrowserRouter(
+    createRoutesFromElements([
     <>
-      <Preloader></Preloader>
-      <Header />
-      <ProgramsBody></ProgramsBody>
-      <Footer></Footer>
-      <ScrollUp></ScrollUp>
+        <Route path='/' element={<> <Preloader/> <Header/> <IndexBody/> </>}/>
+        <Route path='/programs' element={<> <Preloader/> <Header/> <ProgramsBody/> <Footer/> <ScrollUp/> </>}/>
     </>
+    ])
+);
+
+return (
+    <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
   )
 }
 

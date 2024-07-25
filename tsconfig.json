@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "types": ["jquery", "slick-carousel"]
+  },
   "files": [],
   "references": [
     {
