@@ -4,6 +4,9 @@ import 'slick-carousel';
 import About from './About'
 import Services from './Services'
 import About2 from './About2'
+import Gallery from './Gallery';
+import OurTeam from './OurTeam';
+import Contact from './Contact';
 
 
 const IndexBody = () => {
@@ -42,6 +45,9 @@ const IndexBody = () => {
         <About/>
         <Services/>
         <About2/>
+        <Gallery/>
+        <OurTeam/>
+        <Contact/>
     </main>
   )
 }

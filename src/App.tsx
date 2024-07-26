@@ -57,7 +57,7 @@ function App() {
 let router = createBrowserRouter(
     createRoutesFromElements([
     <>
-        <Route path='/' element={<> <Preloader/> <Header/> <IndexBody/> </>}/>
+        <Route path='/' element={<> <Preloader/> <Header/> <IndexBody/> <Footer/> <ScrollUp/></>}/>
         <Route path='/programs' element={<> <Preloader/> <Header/> <ProgramsBody/> <Footer/> <ScrollUp/> </>}/>
     </>
     ])
