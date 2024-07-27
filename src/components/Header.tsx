@@ -11,7 +11,7 @@ const Header = () => {
                     <div className="row align-items-center">
                         <div className="col-xl-2 col-lg-2 col-md-1">
                             <div className="logo">
-                                <a href="index.html"><img src={logo} alt=""/></a>
+                                <Link to="/"><img src={logo} alt=""/></Link>
                             </div>
                         </div>
                         <div className="col-xl-10 col-lg-10 col-md-10">
@@ -20,7 +20,7 @@ const Header = () => {
                                     <nav>
                                         <ul id="navigation">
                                             <li><Link to="/">Home</Link></li>
-                                            <li><a href="about.html">About</a></li>
+                                            <li><Link to="/about">About</Link></li>
                                             <li><Link to="/programs">Programs</Link></li>
                                             <li><a href="schedule.html">schedule</a></li>
                                             <li><a href="gallery.html">gallery</a></li>

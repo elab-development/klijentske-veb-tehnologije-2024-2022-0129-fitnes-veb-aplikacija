@@ -1,6 +1,7 @@
 import React from 'react'
 import FooterBackgound from '../../assets/img/gallery/section_bg03.png'
-import Logo2 from '../../assets/img/logo/logo2_footer.png'
+import Logo2 from '../../assets/img/logo/logo.png'
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <footer>
@@ -51,7 +52,7 @@ const Footer = () => {
                         <div className="col-xl-3 col-lg-4 col-md-5 col-sm-6">
                             <div className="single-footer-caption mb-50">
                                 <div className="footer-logo">
-                                    <a href="index.html"><img src={Logo2} alt=""/></a>
+                                    <Link to="/"><img src={Logo2} alt=""/></Link>
                                 </div>
                                 <div className="footer-tittle">
                                     <div className="footer-pera">
