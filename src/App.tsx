@@ -53,6 +53,7 @@ import {
   
 import IndexBody from './components/IndexBody';
 import AboutBody from './components/AboutBody';
+import GalleryBody from './components/GalleryBody';
 
 function App() {
 let router = createBrowserRouter(
@@ -61,6 +62,7 @@ let router = createBrowserRouter(
         <Route path='/' element={<> <Preloader/> <Header/> <IndexBody/> <Footer/> <ScrollUp/></>}/>
         <Route path='/programs' element={<> <Preloader/> <Header/> <ProgramsBody/> <Footer/> <ScrollUp/> </>}/>
         <Route path='/about' element={<> <Preloader/> <Header/> <AboutBody/> <Footer/> <ScrollUp/> </>}/>
+        <Route path='/gallery' element={<> <Preloader/> <Header/> <GalleryBody/> <Footer/> <ScrollUp/> </>}/>
     </>
     ])
 );
