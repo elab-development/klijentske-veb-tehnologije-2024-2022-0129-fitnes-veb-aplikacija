@@ -1,23 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Loader from '../../assets/img/logo/loder.png'
-import $ from 'jquery'
-
-const Preloader = () => {
-  useEffect(() => {
-    const handleLoad = () => {
-      $('#preloader-active').delay(450).fadeOut('slow');
-      $('body').delay(450).css({
-        'overflow': 'visible'
-      });
-    };
-
-    window.addEventListener('load', handleLoad);
-
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
-  }, []);
-
+const Preloader: React.FC = () => {
   return (
     <div id="preloader-active">
       <div className="preloader d-flex align-items-center justify-content-center">

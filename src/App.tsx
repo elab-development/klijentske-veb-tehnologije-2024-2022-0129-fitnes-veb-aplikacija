@@ -1,3 +1,5 @@
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+
 import '../assets/css/style.css';
 import '../assets/css/bootstrap.min.css';
 import '../assets/css/owl.carousel.min.css';
@@ -37,35 +39,34 @@ import '../assets/scss/_variables.scss';
 import '../assets/scss/_wantTowork.scss';
 import '../assets/scss/style.scss';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-import ProgramsBody from './components/ProgramsBody';
-import ScrollUp from './components/ScrollUp';
-import Preloader from './components/Preloader';
-
 import {
     createBrowserRouter,
     createRoutesFromElements,
     RouterProvider,
     Route,
     Routes
-  } from "react-router-dom";
-  
-import IndexBody from './components/IndexBody';
-import AboutBody from './components/AboutBody';
-import GalleryBody from './components/GalleryBody';
-import Contact from './components/Contact';
-import ContactBody from './components/ContactBody';
+} from "react-router-dom";
 
-function App() {
+import Preloader from './components/Preloader';
+const Header = lazy(() => import('./components/Header'));
+const Footer = lazy(() => import('./components/Footer'));
+const ProgramsBody = lazy(() => import('./components/ProgramsBody'));
+const IndexBody = lazy(() => import('./components/IndexBody'));
+const GalleryBody = lazy(() => import('./components/GalleryBody'));
+const AboutBody = lazy(() => import('./components/AboutBody'));
+const ContactBody = lazy(() => import('./components/ContactBody'));
+
+
+const App: React.FC = () => {
+  
 let router = createBrowserRouter(
     createRoutesFromElements([
     <>
-        <Route path='/' element={<> <Preloader/> <Header/> <IndexBody/> <Footer/> <ScrollUp/></>}/>
-        <Route path='/programs' element={<> <Preloader/> <Header/> <ProgramsBody/> <Footer/> <ScrollUp/> </>}/>
-        <Route path='/about' element={<> <Preloader/> <Header/> <AboutBody/> <Footer/> <ScrollUp/> </>}/>
-        <Route path='/gallery' element={<> <Preloader/> <Header/> <GalleryBody/> <Footer/> <ScrollUp/> </>}/>
-        <Route path='/contact' element={<> <Preloader/> <Header/> <ContactBody/> <Footer/> <ScrollUp/> </>}/>
+        <Route path='/' element={<Suspense fallback={<Preloader />}><Header/><IndexBody/><Footer/></Suspense>}/>
+        <Route path='/programs' element={<Suspense fallback={<Preloader />}><Header/><ProgramsBody/><Footer/></Suspense>}/>
+        <Route path='/about' element={<Suspense fallback={<Preloader />}><Header/><AboutBody/><Footer/></Suspense>}/>
+        <Route path='/gallery' element={<Suspense fallback={<Preloader />}><Header/><GalleryBody/><Footer/></Suspense>}/>
+        <Route path='/contact' element={<Suspense fallback={<Preloader />}><Header/><ContactBody/><Footer/></Suspense>}/>
     </>
     ])
 );
