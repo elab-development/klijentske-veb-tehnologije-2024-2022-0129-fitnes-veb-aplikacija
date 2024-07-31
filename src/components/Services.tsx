@@ -1,8 +1,14 @@
 import React from 'react'
 import OneProgram from './OneProgram'
 import sectionBg from '../../assets/img/gallery/section_bg01.png'
+import { Program } from '../models/program.tsx'
 
-const Services = () => {
+interface ServicesProps {
+    programs: Program[];
+  }
+  
+
+const Services: React.FC<ServicesProps> = ({ programs }) => {
   return (
     <section className="services-area pt-100 pb-150 section-bg" style={{backgroundImage: `url(${sectionBg})`}}>
         <section className="wantToWork-area w-padding">
@@ -22,9 +28,9 @@ const Services = () => {
         </section>
         <div className="container">
             <div className="row">
-                <OneProgram></OneProgram>
-                <OneProgram></OneProgram>
-                <OneProgram></OneProgram>
+                <OneProgram program={programs[0]}></OneProgram>
+                <OneProgram program={programs[1]}></OneProgram>
+                <OneProgram program={programs[2]}></OneProgram>
             </div>
         </div>
     </section>

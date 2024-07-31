@@ -7,6 +7,17 @@ import About2 from './About2'
 import Gallery from './Gallery';
 import OurTeam from './OurTeam';
 import Contact from './Contact';
+import { Program } from '../models/program';
+import { GrRun } from "react-icons/gr";
+import { SlNotebook } from "react-icons/sl";
+import { IoPeopleSharp } from "react-icons/io5";
+
+
+const services: Program[] = [
+    new Program('TRAINING PROGRAM FOR YOUR SPORT', 'Browse through our sport workout programs and find the right one for you and your fitness goals.', <GrRun></GrRun>, '/programs'),
+    new Program('WORKOUT TRACKING', 'Track your workouts and your progress with our easy-to-use fitness tracking feature.', <SlNotebook></SlNotebook>, '/'),
+    new Program('1-ON-1 SESSION WITH COACH', 'If you need any help with your fitness journey, our specialized coaches are here to help you out.', <IoPeopleSharp></IoPeopleSharp>, '/programs')
+];
 
 const slides = [
     {
@@ -63,7 +74,7 @@ const IndexBody: React.FC = () => {
             </div>
         </div>
         <About/>
-        <Services/>
+        <Services programs={services}/>
         <About2/>
         <Gallery/>
         <OurTeam/>

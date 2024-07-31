@@ -1,5 +1,19 @@
 import React from 'react'
 import OneProgram from './OneProgram'
+import { Program } from '../models/program';
+import { IoMdFootball } from "react-icons/io";
+import { IoIosTennisball } from "react-icons/io";
+import { FaBasketball } from "react-icons/fa6";
+import { PiBoxingGloveFill } from "react-icons/pi";
+
+
+
+const programs: Program[] = [
+    new Program('FOOTBALL', 'Messi is the goat', <IoMdFootball></IoMdFootball>, '/programs'),
+    new Program('TENIS', 'NOLE DJOLE, DJOLE NOLE, NOVAK DJOKOVIC THE GOAT OF TENIS', <IoIosTennisball></IoIosTennisball>, '/'),
+    new Program('BASKETBALL', 'Michael Jordan, one and only, his air majesty', <FaBasketball></FaBasketball>, '/programs'),
+    new Program('BOXING', 'onaj cecin', <PiBoxingGloveFill></PiBoxingGloveFill>, '/'),
+];
 
 const ProgramsBody = () => {
   return (
@@ -36,12 +50,12 @@ const ProgramsBody = () => {
             </section>
             <div className="container">
                 <div className="row">
-                    <OneProgram></OneProgram>
-                    <OneProgram></OneProgram>
-                    <OneProgram></OneProgram>
-                    <OneProgram></OneProgram>
-                    <OneProgram></OneProgram>
-                    <OneProgram></OneProgram>
+                    <OneProgram program={programs[0]}></OneProgram>
+                    <OneProgram program={programs[1]}></OneProgram>
+                    <OneProgram program={programs[2]}></OneProgram>
+                    <OneProgram program={programs[3]}></OneProgram>
+                    <OneProgram program={programs[3]}></OneProgram>
+                    <OneProgram program={programs[3]}></OneProgram>
                 </div>
             </div>
         </section>

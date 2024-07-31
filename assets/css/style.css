@@ -3094,6 +3094,7 @@ hr {
 }
 
 .services-area .single-cat {
+    height: 90%;
     padding: 61px 41px;
     -webkit-transition: .4s;
     -moz-transition: .4s;
