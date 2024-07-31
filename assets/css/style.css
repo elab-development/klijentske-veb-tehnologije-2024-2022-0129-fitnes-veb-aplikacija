@@ -556,6 +556,7 @@ hr {
 }
 
 #scrollUp,
+/* Ensure this CSS is loaded and applied */
 #back-top {
     background: #f04e3c;
     height: 50px;
@@ -569,8 +570,24 @@ hr {
     border-radius: 50%;
     line-height: 48px;
     border: 2px solid transparent;
-    box-shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2)
+    box-shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2);
+    opacity: 0;
+    /* Hidden by default */
+    visibility: hidden;
+    /* Hidden by default */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    /* Smooth transition */
+    z-index: 9999;
+    /* Ensure it’s above other content */
 }
+
+#back-top.show {
+    opacity: 1;
+    /* Visible */
+    visibility: visible;
+    /* Visible */
+}
+
 
 @media (max-width: 575px) {
 

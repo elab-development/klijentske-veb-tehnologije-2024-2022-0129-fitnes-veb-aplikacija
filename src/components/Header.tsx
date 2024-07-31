@@ -1,40 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import useScrollHandler from '../CustomHooks/useScrollHandler';
 import logo from '../../assets/img/logo/logo.png';
 import { Link } from 'react-router-dom';
-import $ from 'jquery';
+import '../../assets/css/style.css';
 
-const Header = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const scroll = $(window).scrollTop() as number;
-      if (scroll < 400) {
-        $(".header-sticky").removeClass("sticky-bar");
-        $("#back-top").fadeOut(500);
-      } else {
-        $(".header-sticky").addClass("sticky-bar");
-        $("#back-top").fadeIn(500);
-      }
-    };
-
-    $(window).on("scroll", handleScroll);
-
-    $("#back-top a").on("click", (e) => {
-      e.preventDefault();
-      $("body,html").animate({ scrollTop: 0 }, 800);
-    });
-
-    // Clean up event listeners on component unmount
-    return () => {
-      $(window).off("scroll", handleScroll);
-      $("#back-top a").off("click");
-    };
-  }, []);
-
+const Header: React.FC = () => {
+  const { isSticky, showBackToTop, scrollToTop } = useScrollHandler();
   return (
     <>
       <header>
         <div className="header-area header-transparent">
-          <div className="main-header header-sticky">
+          <div className={`main-header header-sticky ${isSticky ? 'sticky-bar' : ''}`}>
             <div className="container-fluid">
               <div className="row align-items-center">
                 <div className="col-xl-2 col-lg-2 col-md-1">
@@ -69,9 +45,11 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <div id="back-top">
-        <a title="Go to Top" href="#"><i className="fas fa-level-up-alt"></i></a>
+      {showBackToTop && (
+      <div id="back-top" className={showBackToTop ? 'show' : ''}>
+        <a title="Go to Top" href="#" onClick={scrollToTop}><i className="fas fa-level-up-alt"></i></a>
       </div>
+      )}
     </>
   );
 };

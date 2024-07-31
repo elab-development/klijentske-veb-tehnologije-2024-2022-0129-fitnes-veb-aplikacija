@@ -1,26 +1,31 @@
 .slider-area {
     position: relative;
     overflow: hidden;
+    height: 150vh;
 }
 
 .slide-enter {
     opacity: 0;
     transform: translateX(100%);
+    overflow: hidden;
 }
 
 .slide-enter-active {
     opacity: 1;
     transform: translateX(0);
     transition: opacity 2s, transform 2s;
+    overflow: hidden;
 }
 
 .slide-exit {
     opacity: 1;
     transform: translateX(0);
+    overflow: hidden;
 }
 
 .slide-exit-active {
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity 2s, transform 2s;
+    overflow: hidden;
 }
