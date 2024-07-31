@@ -31,9 +31,10 @@ const Contact = () => {
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 mb-30">
-                                        <div className="select-itms">
-                                            <select name="select" id="select2" required>
+                                        <div className="select-itms" style={{paddingTop: '15px'}}>
+                                            <select name="select" id="select2" required style={{color: 'gray', width: '100%', height: '45px', background: 'transparent', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderBottom: '2px solid #e9f0f4', fontSize: '16px', padding: '10px 22px', paddingRight: '30px', fontWeight: '500'}}>
                                                 <option value="" disabled selected>Select your program</option>
+                                                <option value="">No program/new member</option>
                                                 <option value="">Boxing</option>
                                                 <option value="">Basketball</option>
                                                 <option value="">Tennis</option>

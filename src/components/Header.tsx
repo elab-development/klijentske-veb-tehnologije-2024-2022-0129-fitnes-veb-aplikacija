@@ -52,7 +52,7 @@ const Header = () => {
                           <li><Link to="/programs">Programs</Link></li>
                           <li><a href="schedule.html">Schedule</a></li>
                           <li><Link to="/gallery">Gallery</Link></li>
-                          <li><a href="contact.html">Contact</a></li>
+                          <li><Link to="/contact">Contact</Link></li>
                         </ul>
                       </nav>
                     </div>
