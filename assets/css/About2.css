@@ -1,0 +1,57 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-left: 80px;
+}
+
+.buttons button {
+    background-color: #f04e3c;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+.slider-area {
+    position: relative;
+    height: 100vh;
+}
+
+.slides-enter {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(100%);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.slides-enter-active {
+    position: absolute;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 2s, transform 2s;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.slides-exit {
+    opacity: 1;
+    transform: translateX(0);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.slides-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 2s, transform 2s;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 1;
+}
