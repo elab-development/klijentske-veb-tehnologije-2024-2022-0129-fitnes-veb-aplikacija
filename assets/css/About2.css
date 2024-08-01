@@ -1,26 +1,17 @@
 .buttons {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    padding-left: 80px;
+    justify-content: flex-start;
+    margin-top: 10px;
 }
 
 .buttons button {
     background-color: #f04e3c;
     border: none;
     padding: 10px 20px;
-    margin: 0 5px;
+    margin-left: 0px;
+    margin-right: 10px;
     cursor: pointer;
     border-radius: 5px;
-}
-
-.buttons button:hover {
-    background-color: #0056b3;
-}
-
-.slider-area {
-    position: relative;
-    height: 100vh;
 }
 
 .slides-enter {
