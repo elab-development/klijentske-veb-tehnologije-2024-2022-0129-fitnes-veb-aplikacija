@@ -40,7 +40,7 @@ const IndexBody: React.FC = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-        }, 15000);
+        }, 10000);
 
         return () => clearInterval(interval);
     }, []);

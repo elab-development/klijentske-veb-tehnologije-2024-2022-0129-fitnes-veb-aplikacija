@@ -72,7 +72,7 @@ let router = createBrowserRouter(
 );
 
 return (
-    <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+    <RouterProvider router={router} fallbackElement={<Preloader></Preloader>} />
   )
 }
 

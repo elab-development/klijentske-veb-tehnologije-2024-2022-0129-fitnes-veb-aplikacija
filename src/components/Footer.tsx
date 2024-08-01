@@ -1,5 +1,5 @@
 import React from 'react'
-import FooterBackgound from '../../assets/img/gallery/section_bg03.png'
+import FooterBackgound from '../../assets/img/gallery/pexels-olly-3763870.jpg'
 import Logo2 from '../../assets/img/logo/logo.png'
 import { Link } from 'react-router-dom'
 const Footer = () => {
@@ -14,10 +14,9 @@ const Footer = () => {
                                 <div className="footer-tittle">
                                     <h4>COMPANY</h4>
                                     <ul>
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Company</a></li>
-                                        <li><a href="#"> Press & Blog</a></li>
-                                        <li><a href="#"> Privacy Policy</a></li>
+                                        <li><Link to="/about">About Us</Link></li>
+                                        <li><Link to="/">Company</Link></li>
+                                        <li><Link to="/"> Privacy Policy</Link></li>
                                     </ul>
                                 </div>
                             </div>
