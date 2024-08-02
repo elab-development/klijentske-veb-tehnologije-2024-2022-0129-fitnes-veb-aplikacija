@@ -1,7 +1,7 @@
 import React from 'react'
 import about from '../../assets/img/gallery/about.png'
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <section className="about-area section-padding30">
             <div className="container">
@@ -14,10 +14,10 @@ const About = () => {
                     <div className="col-lg-6 col-md-12">
                         <div className="about-caption">
                             <div className="section-tittle section-tittle3 mb-35">
-                                <span>ABOUT oUR GYM</span>
-                                <h2>Safe Body building proper Solutions That Saves our Valuable Time!</h2>
+                                <span>ABOUT OUR APP</span>
+                                <h2>Your Ultimate Destination for Sports-Specific Workout Programs and Tracking</h2>
                             </div>
-                                <p className="mb-65 pera-bottom">Brooke presents services designed with flexible and convenient layouts. You can choose your favorite designs and elements for a tailored experience, with unlimited customization possibilities. We aim for a pixel-perfect replication of the designer's vision.</p>
+                                <p className="mb-65 pera-bottom">At Athlete X, we offer tailored workout programs for a variety of sports, including basketball, tennis, football, gym, street workout, and more. Our comprehensive workout tracker allows you to monitor your progress by logging reps, sets, and weights, helping you stay on track and achieve your fitness goals. Join us and take your training to the next level!</p>
                             <a href="from.html" className="btn">become a member</a>
                         </div>
                     </div>

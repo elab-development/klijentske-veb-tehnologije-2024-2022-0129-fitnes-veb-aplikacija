@@ -2,8 +2,9 @@ import React from 'react'
 import team1 from '../../assets/img/gallery/team1.png'
 import team2 from '../../assets/img/gallery/team2.png'
 import team3 from '../../assets/img/gallery/team3.png'
+import { Link } from 'react-router-dom'
 
-const OurTeam = () => {
+const OurTeam: React.FC = () => {
   return (
     <>
     <section className="wantToWork-area w-padding">
@@ -16,7 +17,7 @@ const OurTeam = () => {
                         </div>
                     </div>
                     <div className="col-xl-2 col-lg-2 col-md-3">
-                        <a href="services.html" className="btn wantToWork-btn f-right">More Services</a>
+                        <Link to="/about" className="btn wantToWork-btn f-right">More About Us</Link>
                     </div>
                 </div>
             </div>
@@ -29,14 +30,14 @@ const OurTeam = () => {
                             <div className="team-img">
                                 <img src={team1} alt=""/>
                                 <div className="team-caption">
-                                    <span>Nutritionist</span>
-                                    <h3><a href="#">John Sunsaev</a></h3>
+                                    <span>Basketball and Gym Coach</span>
+                                    <h3><a>Немања Ђукић</a></h3>
                                     <div className="team-social">
                                         <ul>
                                             <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
                                             <li><a href="#"><i className="fab fa-twitter"></i></a></li>
                                             <li><a href="#"><i className="fas fa-globe"></i></a></li>
-                                            <li><a href="#"><i className="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.instagram.com/djukic_n/" target="_blank"><i className="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -48,8 +49,8 @@ const OurTeam = () => {
                             <div className="team-img">
                                 <img src={team2} alt=""/>
                                 <div className="team-caption">
-                                    <span>Group fitness instructor</span>
-                                    <h3><a href="#">Jacob Collier</a></h3>
+                                    <span>Tennis and StreetWorkout Coach</span>
+                                    <h3><a>Милица Дрљача</a></h3>
                                     <div className="team-social">
                                         <ul>
                                             <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>

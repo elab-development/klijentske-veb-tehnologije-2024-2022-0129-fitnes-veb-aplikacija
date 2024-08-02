@@ -1,11 +1,11 @@
 import React from 'react'
-import gallery5 from '../../assets/img/gallery/gallery5.png'
-import gallery4 from '../../assets/img/gallery/gallery4.png'
-import gallery3 from '../../assets/img/gallery/gallery3.png'
-import gallery2 from '../../assets/img/gallery/gallery2.png'
-import gallery1 from '../../assets/img/gallery/gallery1.png'
+import gallery5 from '../../assets/img/gallery/gallery5.jpg'
+import gallery4 from '../../assets/img/gallery/gallery4.jpg'
+import gallery3 from '../../assets/img/gallery/gallery3.jpg'
+import gallery2 from '../../assets/img/gallery/gallery2.jpg'
+import gallery1 from '../../assets/img/gallery/gallery1.jpg'
 
-const Gallery = () => {
+const Gallery: React.FC = () => {
   return (
     <div className="gallery-area">
             <div className="container-fluid p-0 fix">

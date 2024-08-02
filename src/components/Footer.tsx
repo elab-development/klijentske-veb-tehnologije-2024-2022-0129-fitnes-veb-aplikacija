@@ -2,7 +2,7 @@ import React from 'react'
 import FooterBackgound from '../../assets/img/gallery/pexels-olly-3763870.jpg'
 import Logo2 from '../../assets/img/logo/logo.png'
 import { Link } from 'react-router-dom'
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer>
         <div className="footer-area section-bg" style={{backgroundImage: `url(${FooterBackgound})`}} >
@@ -73,7 +73,7 @@ const Footer = () => {
                         <div className="col-lg-12">
                             <div className="footer-copy-right text-center">
                                 <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i className="fa fa-heart" aria-hidden="true"></i> by Drkule and Djukule
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i className="fa fa-heart" aria-hidden="true"></i> by Drkule and Đukule
                                 </p>
                             </div>
                         </div>

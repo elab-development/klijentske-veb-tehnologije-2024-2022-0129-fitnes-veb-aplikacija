@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 
 import '../assets/css/style.css';
 import '../assets/css/bootstrap.min.css';
@@ -43,8 +43,7 @@ import {
     createBrowserRouter,
     createRoutesFromElements,
     RouterProvider,
-    Route,
-    Routes
+    Route
 } from "react-router-dom";
 
 import Preloader from './components/Preloader';

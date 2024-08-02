@@ -2,6 +2,7 @@ import React from 'react'
 import OneProgram from './OneProgram'
 import sectionBg from '../../assets/img/gallery/section_bg01.png'
 import { Program } from '../models/program.tsx'
+import { Link } from 'react-router-dom';
 
 interface ServicesProps {
     programs: Program[];
@@ -21,7 +22,7 @@ const Services: React.FC<ServicesProps> = ({ programs }) => {
                         </div>
                     </div>
                     <div className="col-xl-2 col-lg-2 col-md-3">
-                        <a href="services.html" className="btn wantToWork-btn f-right">More Services</a>
+                        <Link to="/programs" className="btn wantToWork-btn f-right">More Services</Link>
                     </div>
                 </div>
             </div>
