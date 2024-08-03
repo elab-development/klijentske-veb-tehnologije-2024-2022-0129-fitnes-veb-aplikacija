@@ -417,6 +417,17 @@ hr {
     margin: 0
 }
 
+.reg-btn {
+    color: #ff1313;
+    margin-left: 5px;
+    text-decoration: underline;
+}
+
+.reg-btn:hover {
+    color: #ff1313;
+    text-decoration: none;
+}
+
 .btn::before {
     content: "";
     position: absolute;

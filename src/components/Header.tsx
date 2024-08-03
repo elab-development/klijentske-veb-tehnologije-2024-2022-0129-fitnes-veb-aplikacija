@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                       </nav>
                     </div>
                     <div className="header-right-btn f-right d-none d-lg-block ml-30">
-                      <a href="from.html" className="btn header-btn">Become a member</a>
+                      <Link to="/login" className="btn header-btn">Become a member</Link>
                     </div>
                   </div>
                 </div>
