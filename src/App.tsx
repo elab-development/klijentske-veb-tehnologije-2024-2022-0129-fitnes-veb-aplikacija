@@ -47,6 +47,7 @@ import {
 } from "react-router-dom";
 
 import Preloader from './components/Preloader';
+const Register = lazy(() => import('./components/Register'));
 const Login = lazy(() => import('./components/Login'));
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -68,6 +69,7 @@ let router = createBrowserRouter(
         <Route path='/gallery' element={<Suspense fallback={<Preloader />}><Header/><GalleryBody/><Footer/></Suspense>}/>
         <Route path='/contact' element={<Suspense fallback={<Preloader />}><Header/><ContactBody/><Footer/></Suspense>}/>
         <Route path='/login' element={<Suspense fallback={<Preloader />}><Login/></Suspense>}/>
+        <Route path='/register' element={<Suspense fallback={<Preloader />}><Register/></Suspense>}/>
     </>
     ])
 );
