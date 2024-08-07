@@ -56,6 +56,7 @@ const Login: React.FC = () => {
                   <div className="col-lg-12 col-md-6">
                     <div className="form-box user-icon mb-30">
                       <input
+                        style={{ textTransform: 'none' }}
                         type="text"
                         name="username"
                         value={username}
@@ -65,8 +66,9 @@ const Login: React.FC = () => {
                     </div>
                   </div>
                   <div className="col-lg-12 col-md-6">
-                    <div className="form-box email-icon mb-30">
+                    <div className="form-box password-icon mb-30">
                       <input
+                        style={{ textTransform: 'none' }}
                         type="password"
                         name="password"
                         value={password}

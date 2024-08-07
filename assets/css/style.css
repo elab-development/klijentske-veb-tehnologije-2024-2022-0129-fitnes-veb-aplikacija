@@ -7040,3 +7040,49 @@ del {
     width: 85%;
     height: 100%;
 }
+
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #f04e3c;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.profile-dropdown .dropdown-menu {
+    display: block;
+    position: absolute;
+    padding: 0;
+    margin-top: 4px;
+    top: 100%;
+    left: -50%;
+    background-color: black;
+    border: 1px solid #f04e3c;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.profile-dropdown .dropdown-menu .dropdown-item {
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    border-bottom: 1px solid #f04e3c;
+    cursor: pointer;
+}
+
+.profile-dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: black;
+    color: #f04e3c;
+}

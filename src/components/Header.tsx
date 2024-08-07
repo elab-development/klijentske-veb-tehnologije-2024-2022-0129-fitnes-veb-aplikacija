@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useScrollHandler from '../CustomHooks/useScrollHandler';
 import logo from '../../assets/img/logo/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,10 +9,15 @@ const Header: React.FC = () => {
   const { isSticky, showBackToTop, scrollToTop } = useScrollHandler();
   const { user, logout } = useUser();
   const navigate = useNavigate();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
     navigate('/');
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(prev => !prev);
   };
 
   return (
@@ -43,9 +48,19 @@ const Header: React.FC = () => {
                     </div>
                     <div className="header-right-btn f-right d-none d-lg-block ml-30">
                     {user ? (
-                        <div className="profile">
-                          <img src={`path/to/profile/pictures/${user.id}.jpg`} alt="Profile" />
-                          <button onClick={handleLogout} className="btn header-btn">Logout</button>
+                        <div className="profile-dropdown">
+                          <img
+                            src={'../../assets/img/logo/profile.png'}
+                            alt="Profile"
+                            className="profile-picture"
+                            onClick={toggleDropdown}
+                          />
+                          {isDropdownOpen && (
+                            <div className="dropdown-menu">
+                              <Link to="/profile" className="dropdown-item">Profile</Link>
+                              <button onClick={handleLogout} className="dropdown-item">Logout</button>
+                            </div>
+                          )}
                         </div>
                       ) : (
                         <Link to="/login" className="btn header-btn">Become a member</Link>
