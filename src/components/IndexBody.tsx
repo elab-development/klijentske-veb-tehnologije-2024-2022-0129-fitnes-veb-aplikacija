@@ -7,7 +7,7 @@ import About2 from './About2'
 import Gallery from './Gallery';
 import OurTeam from './OurTeam';
 import Contact from './Contact';
-import { Program } from '../models/program';
+import { Program } from '../models/program1';
 import { GrRun } from "react-icons/gr";
 import { SlNotebook } from "react-icons/sl";
 import { IoPeopleSharp } from "react-icons/io5";

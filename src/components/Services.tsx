@@ -1,7 +1,7 @@
 import React from 'react'
 import OneProgram from './OneProgram'
 import sectionBg from '../../assets/img/gallery/section_bg01.png'
-import { Program } from '../models/program.tsx'
+import { Program } from '../models/program1.tsx'
 import { Link } from 'react-router-dom';
 
 interface ServicesProps {

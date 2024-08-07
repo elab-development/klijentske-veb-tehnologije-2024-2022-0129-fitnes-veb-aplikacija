@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../models/user';
 import axios from 'axios';
+import { useUser } from '../contexts/UserContext';
 
 const Login: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const { setUser } = useUser();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +27,8 @@ const Login: React.FC = () => {
 
     const user = users.find(u => u.username === username && u.password === password);
     if (user) {
-      alert('Login successful');
+      setUser(user);
+      navigate('/');
     } else {
       alert('Wrong username or password');
     }

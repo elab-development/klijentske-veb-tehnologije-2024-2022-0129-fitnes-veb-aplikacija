@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from 'react';
+import { UserProvider } from './contexts/UserContext';
 
 import '../assets/css/style.css';
 import '../assets/css/bootstrap.min.css';
@@ -75,7 +76,9 @@ let router = createBrowserRouter(
 );
 
 return (
-    <RouterProvider router={router} fallbackElement={<Preloader></Preloader>} />
+    <UserProvider>
+        <RouterProvider router={router} fallbackElement={<Preloader></Preloader>} />
+    </UserProvider>
   )
 }
 
