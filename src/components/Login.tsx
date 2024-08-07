@@ -9,28 +9,29 @@ const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { setUser } = useUser();
+  const { user, setUser } = useUser();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get('/usersData.json');
-      const usersArray: User[] = response.data.users.map((user: any) => {
-        return new User(user.id, user.username, user.password, user.fullName, user.email);
-      });
-      setUsers(usersArray);
-    };
-    fetchData();
-  }, []);
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-
-    const user = users.find(u => u.username === username && u.password === password);
     if (user) {
-      setUser(user);
+      alert('You are already logged in!');
       navigate('/');
-    } else {
-      alert('Wrong username or password');
+    }
+  }, [user, navigate]);
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    try {
+      const response = await axios.get('/usersData.json');
+      const users: User[] = response.data.users;
+      const loggedInUser = users.find(u => u.username === username && u.password === password);
+      if (loggedInUser) {
+        setUser(loggedInUser);
+        navigate('/');
+      } else {
+        alert('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
     }
   };
 

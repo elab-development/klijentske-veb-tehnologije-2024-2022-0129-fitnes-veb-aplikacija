@@ -1,6 +1,6 @@
 import React from 'react'
 import OneProgram from './OneProgram'
-import { Program } from '../models/program1';
+import { Program } from '../models/program';
 import { IoMdFootball } from "react-icons/io";
 import { IoIosTennisball } from "react-icons/io";
 import { FaBasketball } from "react-icons/fa6";

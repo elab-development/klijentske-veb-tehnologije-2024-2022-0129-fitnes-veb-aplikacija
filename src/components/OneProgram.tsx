@@ -1,5 +1,5 @@
 import React from 'react'
-import { Program } from '../models/program1.tsx';
+import { Program } from '../models/program.tsx';
 
 interface OneProgramProps {
   program: Program;

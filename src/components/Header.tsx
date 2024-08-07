@@ -1,13 +1,19 @@
 import React from 'react';
 import useScrollHandler from '../CustomHooks/useScrollHandler';
 import logo from '../../assets/img/logo/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../assets/css/style.css';
 import { useUser } from '../contexts/UserContext';
 
 const Header: React.FC = () => {
   const { isSticky, showBackToTop, scrollToTop } = useScrollHandler();
-  const { user } = useUser();
+  const { user, logout } = useUser();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <>
@@ -39,7 +45,7 @@ const Header: React.FC = () => {
                     {user ? (
                         <div className="profile">
                           <img src={`path/to/profile/pictures/${user.id}.jpg`} alt="Profile" />
-                          <span>{user.fullName}</span>
+                          <button onClick={handleLogout} className="btn header-btn">Logout</button>
                         </div>
                       ) : (
                         <Link to="/login" className="btn header-btn">Become a member</Link>
