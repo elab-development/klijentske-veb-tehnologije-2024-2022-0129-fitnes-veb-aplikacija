@@ -57,6 +57,8 @@ const IndexBody = lazy(() => import('./components/IndexBody'));
 const GalleryBody = lazy(() => import('./components/GalleryBody'));
 const AboutBody = lazy(() => import('./components/AboutBody'));
 const ContactBody = lazy(() => import('./components/ContactBody'));
+const Tennis = lazy(() => import('./components/Tennis'));
+
 
 
 const App: React.FC = () => {
@@ -71,6 +73,8 @@ let router = createBrowserRouter(
         <Route path='/contact' element={<Suspense fallback={<Preloader />}><Header/><ContactBody/><Footer/></Suspense>}/>
         <Route path='/login' element={<Suspense fallback={<Preloader />}><Login/></Suspense>}/>
         <Route path='/register' element={<Suspense fallback={<Preloader />}><Register/></Suspense>}/>
+        <Route path='/tennis' element={<Suspense fallback={<Preloader />}><Header/><Tennis/><Footer/></Suspense>}/>
+
     </>
     ])
 );
