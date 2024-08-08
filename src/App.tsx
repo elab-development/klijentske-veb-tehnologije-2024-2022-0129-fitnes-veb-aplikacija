@@ -48,6 +48,9 @@ import {
 } from "react-router-dom";
 
 import Preloader from './components/Preloader';
+import BasketballDesc from './components/BasketballDesc';
+import BasketballSchedule from './components/BasketballSchedule';
+import BasketballBody from './components/BasketballBody';
 const Register = lazy(() => import('./components/Register'));
 const Login = lazy(() => import('./components/Login'));
 const Header = lazy(() => import('./components/Header'));
@@ -74,6 +77,8 @@ let router = createBrowserRouter(
         <Route path='/login' element={<Suspense fallback={<Preloader />}><Login/></Suspense>}/>
         <Route path='/register' element={<Suspense fallback={<Preloader />}><Register/></Suspense>}/>
         <Route path='/tennis' element={<Suspense fallback={<Preloader />}><Header/><Tennis/><Footer/></Suspense>}/>
+        <Route path='/programs/basketball' element={<Suspense fallback={<Preloader />}><Header/><BasketballBody/><Footer/></Suspense>}/>
+
 
     </>
     ])
