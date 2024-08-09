@@ -5,7 +5,7 @@ import { SchTab } from '../models/schtab';
 
 const tabs: SchTab[] = [
     new SchTab('Rest day', 'Full day','Немања Ђукић'),
-    new SchTab('Basketball drils', '8am - 10am','Немања Ђукић'),
+    new SchTab('Basketball drills', '8am - 10am','Немања Ђукић'),
     new SchTab('Rest', '10am - 5pm','Немања Ђукић'),
     new SchTab('Pull workout', '5pm - 6pm','Немања Ђукић'),
     new SchTab('Push workout', '5pm - 6pm','Jack Johnson'),
@@ -14,11 +14,11 @@ const tabs: SchTab[] = [
 
 const BasketballSchedule: React.FC = () => {
   return (
-    <section className="date-tabs">
+    <section className="date-tabs" style={{padding: '5%'}}>
         <div className="container">
-            <div className="row justify-content-start">
+            <div className="row justify-content-center">
                 <div className="col-lg-6 col-md-8">
-                    <div className="section-tittle mb-100">
+                    <div className="section-tittle text-center mb-100">
                         <span>WORKOUT PLAN</span>
                         <h2>PREVIEW OF OUR BASKETBALL WORKOUT PROGRAM</h2>
                     </div>

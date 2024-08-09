@@ -7090,184 +7090,288 @@ del {
 .tennis-page {
     position: relative;
     color: white;
-  }
-  
-  .background-image {
-    background-image: url('/path/to/tennis_background2.png'); 
+}
+
+.background-image {
+    background-image: url('/path/to/tennis_background2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh; 
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; 
-  }
-  
-  .hero-section {
-    margin-top: 100px; 
+    color: white;
+}
+
+.hero-section {
+    margin-top: 100px;
     text-align: center;
-  }
-  
-  .hero-title {
+}
+
+.hero-title {
     font-size: 3rem;
     color: white;
     font-weight: bold;
     margin-bottom: 20px;
-  }
-  
-  .hero-image {
+}
+
+.hero-image {
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin-bottom: 50px;
-    margin-top: 50px; 
-  }
-  
-  .hero-subtitle {
+    margin-top: 50px;
+}
+
+.hero-subtitle {
     font-size: 1.25rem;
     color: #666;
-  }
-  
-  .tennis-content {
+}
+
+.tennis-content {
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
-  .about-title {
+.about-title {
     font-size: 4em;
     font-weight: bold;
     color: white;
-  }
-  
-  .about-text {
+}
+
+.about-text {
     font-size: 2em;
     font-weight: bold;
     color: white;
-  }
-  
-  .contact-info {
-    background: rgba(0, 0, 0, 0.7); 
-    color: white; 
-    padding: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5); 
-  }
-  
-  .contact-info h3 {
+}
+
+.contact-info {
+    background: rgba(0, 0, 0, 0.7);
     color: white;
-    font-size: 2em; 
-    margin-bottom: 15px; 
-  }
-  
-  .contact-info p {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact-info h3 {
     color: white;
-    font-size: 2em; 
-  }
-  
-  .services-section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: white;
+    font-size: 2em;
+}
+
+.services-section h2 {
     color: white;
     font-size: 3em;
     font-weight: bold;
-  }
-  
-  .service-card {
-    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
-    width: 100%; 
-    height: 250px; 
+    width: 100%;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-    border-radius: 8px; 
-    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
 
-  }
+}
 
-  .service-title {
+.service-title {
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
-  .service-description {
-    font-size: 2em;
-  }
-
-  .coaches-section h2 {
-    font-size: 3em; 
-    font-weight: bold; 
-    color: white; 
-    margin-bottom: 30px; 
-    text-align: center; 
 }
-  
-  .coaches-section .coach-card {
+
+.service-description {
+    font-size: 2em;
+}
+
+.coaches-section h2 {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.coaches-section .coach-card {
     display: flex;
     align-items: center;
     padding: 15px;
-    border: 1px solid #ccc; 
-    border-radius: 8px; 
-    background-color: rgba(0, 0, 0, 0.5); 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
 }
 
 .coaches-section .coach-image {
-    border-radius: 50%; 
-    width: 80px; 
-    height: 80px; 
-    object-fit: cover; 
-    margin-right: 15px; 
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
 }
 
 .coaches-section .coach-name {
-    font-size: 2.5em; 
-    font-weight: bold; 
-    margin-bottom: 10px; 
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .coaches-section .coach-role,
 .coaches-section .coach-description {
-    color: white; 
-    font-size: 1.5em; 
+    color: white;
+    font-size: 1.5em;
 }
 
 .coaches-section .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .comments-section h4 {
-    font-size: 2.5em; 
-    font-weight: bold; 
-    color: white; 
-    margin-bottom: 20px; 
-    text-align: center; 
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
 }
-  
-  .comment-list {
+
+.comment-list {
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
-  }
+}
 
-  .comment-form .btn-primary {
-      background-color: #FF0000; 
-      color: white; 
-      border: none; 
-      border-radius: 8px; 
-      padding: 10px 20px; 
-      font-size: 2em; 
-  }
-  
-  .comment-form h4 {
-      color: white; 
-      font-size: 2.5em; 
-      font-weight: bold; 
-      margin-bottom: 15px; 
-  }
+.comment-form .btn-primary {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 2em;
+}
+
+.comment-form h4 {
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Pricing section */
+
+.pricing-section {
+    background: white;
+}
+
+.ps-item {
+    text-align: center;
+    padding: 40px 30px 52px;
+    border: 1px solid #f04e3c;
+    -webkit-transform: skewY(-4deg);
+    -ms-transform: skewY(-4deg);
+    transform: skewY(-4deg);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.ps-item:hover {
+    background: black;
+    border-color: black;
+}
+
+.ps-item:hover h3 {
+    color: white;
+}
+
+.ps-item:hover .pi-price span {
+    color: white;
+}
+
+.ps-item:hover ul li {
+    color: white;
+    font-weight: 600;
+}
+
+.ps-item:hover .primary-btn.pricing-btn {
+    background: #f04e3c;
+}
+
+.ps-item h3 {
+    font-size: 28px;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 16px;
+    -webkit-transform: skewY(4deg);
+    -ms-transform: skewY(4deg);
+    transform: skewY(4deg);
+}
+
+.ps-item .pi-price {
+    margin-bottom: 30px;
+    -webkit-transform: skewY(4deg);
+    -ms-transform: skewY(4deg);
+    transform: skewY(4deg);
+}
+
+.ps-item .pi-price h2 {
+    font-size: 60px;
+    color: #f04e3c;
+    font-weight: 600;
+}
+
+.ps-item .pi-price span {
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ps-item ul {
+    margin-bottom: 40px;
+    -webkit-transform: skewY(4deg);
+    -ms-transform: skewY(4deg);
+    transform: skewY(4deg);
+}
+
+.ps-item ul li {
+    font-size: 14px;
+    color: black;
+    line-height: 32px;
+    list-style: none;
+}
+
+.ps-item .primary-btn.pricing-btn {
+    display: block;
+    background: black;
+    -webkit-transform: skewY(4deg);
+    -ms-transform: skewY(4deg);
+    transform: skewY(4deg);
+    font-family: "Muli", sans-serif;
+    font-size: 14px;
+    padding: 17px 30px 16px;
+    color: #ffffff;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    box-sizing: border-box;
+}
