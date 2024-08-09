@@ -22,7 +22,7 @@ const Services: React.FC<ServicesProps> = ({ programs }) => {
                         </div>
                     </div>
                     <div className="col-xl-2 col-lg-2 col-md-3">
-                        <Link to="/programs" className="btn wantToWork-btn f-right">More Services</Link>
+                        <Link to="/programs" className="btn wantToWork-btn f-right">Our Programs</Link>
                     </div>
                 </div>
             </div>

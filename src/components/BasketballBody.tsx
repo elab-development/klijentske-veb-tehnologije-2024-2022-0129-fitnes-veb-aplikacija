@@ -2,6 +2,9 @@ import React from 'react'
 import BasketballSchedule from './BasketballSchedule'
 import BBHero from '../../assets/img/hero/bball_hero.jpg'
 import BBall from '../../assets/img/gallery/Basketball.jpg';
+import Com1 from '../../assets/img/comment/comment_1.png'
+import Com2 from '../../assets/img/comment/comment_2.png'
+import Com3 from '../../assets/img/comment/comment_3.png'
 import Pricing from './Pricing'
 
 const BasketballBody: React.FC = () => {
@@ -75,6 +78,97 @@ const BasketballBody: React.FC = () => {
     </section>
     <BasketballSchedule />
     <Pricing />
+
+    <div className="container" style={{paddingBottom: '8%'}}>
+        <div className="row justify-content-center" style={{width: '100%'}}>
+            <div className="col-lg-10 posts-list">
+                <div className="comments-area">
+                    <h4>03 Comments</h4>
+                    <div className="comment-list">
+                        <div className="single-comment justify-content-between d-flex">
+                            <div className="user justify-content-between d-flex">
+                                <div className="thumb">
+                                    <img src={Com1} alt=""/>
+                                </div>
+                                <div className="desc">
+                                    <p className="comment">
+                                        Great workout plan! I love it! It helped me to join my collage basketball team.
+                                    </p>
+                                    <div className="d-flex justify-content-between">
+                                        <div className="d-flex align-items-center">
+                                            <h5>
+                                                <a>Jacob Blunt</a>
+                                            </h5>
+                                            <p className="date">December 4, 2023 at 3:12 pm </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="comment-list">
+                        <div className="single-comment justify-content-between d-flex">
+                            <div className="user justify-content-between d-flex">
+                                <div className="thumb">
+                                    <img src={Com2} alt=""/>
+                                </div>
+                                <div className="desc">
+                                    <p className="comment">
+                                        I love this program. 5 stars!
+                                    </p>
+                                    <div className="d-flex justify-content-between">
+                                        <div className="d-flex align-items-center">
+                                            <h5>
+                                                <a>Alex Ferguson</a>
+                                            </h5>
+                                            <p className="date">December 25, 2023 at 3:16 am </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="comment-list">
+                        <div className="single-comment justify-content-between d-flex">
+                            <div className="user justify-content-between d-flex">
+                                <div className="thumb">
+                                    <img src={Com3} alt=""/>
+                                </div>
+                                <div className="desc">
+                                    <p className="comment">
+                                        I've been playing this program for 2 years. I can't wait to see where I can improve.
+                                    </p>
+                                    <div className="d-flex justify-content-between">
+                                        <div className="d-flex align-items-center">
+                                            <h5>
+                                                <a>Emilly Blunt</a>
+                                            </h5>
+                                            <p className="date">February, 2024 at 6:22 pm </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="comment-form">
+                    <h4 style={{color: '#2c234d'}}>Leave a Reply</h4>
+                    <form className="form-contact comment_form" action="#" id="commentForm">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="form-group">
+                                    <textarea className="form-control w-100" name="comment" id="comment" placeholder="Write Comment" rows={9}></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <button type="submit" className="button button-contactForm btn_1 boxed-btn">Post Comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     </main>
   )
 }

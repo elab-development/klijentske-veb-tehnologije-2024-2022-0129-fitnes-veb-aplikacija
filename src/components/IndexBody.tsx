@@ -11,6 +11,7 @@ import { Program } from '../models/program';
 import { GrRun } from "react-icons/gr";
 import { SlNotebook } from "react-icons/sl";
 import { IoPeopleSharp } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 
 const services: Program[] = [
@@ -23,13 +24,11 @@ const slides = [
     {
         spanText: 'with Drki and Đuka',
         h1Text: 'Learn to play every sport in one place.',
-        href: 'from.html',
         btnText: 'become a member',
     },
     {
         spanText: 'with Bora and Majstor Ž',
         h1Text: 'Join us so you can become an Athlete X too.',
-        href: 'from.html',
         btnText: 'become a member',
     },
 ];
@@ -61,9 +60,9 @@ const IndexBody: React.FC = () => {
                                         <div className="hero__caption">
                                             <span>{slides[currentSlide].spanText}</span>
                                             <h1>{slides[currentSlide].h1Text}</h1>
-                                            <a href={slides[currentSlide].href} className="btn hero-btn">
+                                            <Link to='/login' className="btn hero-btn">
                                                 {slides[currentSlide].btnText}
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

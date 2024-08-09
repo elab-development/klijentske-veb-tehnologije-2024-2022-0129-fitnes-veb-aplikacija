@@ -1,5 +1,6 @@
 import React from 'react'
 import about from '../../assets/img/gallery/about.png'
+import { Link } from 'react-router-dom'
 
 const About: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const About: React.FC = () => {
                                 <h2>Your Ultimate Destination for Sports-Specific Workout Programs and Tracking</h2>
                             </div>
                                 <p className="mb-65 pera-bottom">At Athlete X, we offer tailored workout programs for a variety of sports, including basketball, tennis, football, gym, street workout, and more. Our comprehensive workout tracker allows you to monitor your progress by logging reps, sets, and weights, helping you stay on track and achieve your fitness goals. Join us and take your training to the next level!</p>
-                            <a href="from.html" className="btn">become a member</a>
+                            <Link to="/login" className="btn">become a member</Link>
                         </div>
                     </div>
                 </div>
