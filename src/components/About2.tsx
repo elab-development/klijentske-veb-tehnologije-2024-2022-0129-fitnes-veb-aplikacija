@@ -51,7 +51,7 @@ const About2: React.FC = () => {
                                 <img src={testimonials[index].img} alt="" />
                             </CSSTransition>
                         </TransitionGroup>
-                        <div className="shape-qutaion d-none d-sm-block" style={{zIndex: '99999999'}}>
+                        <div className="shape-qutaion d-none d-sm-block" style={{zIndex: '3'}}>
                             <img src={Qutaion} alt=""/>
                         </div>
                     </div>
