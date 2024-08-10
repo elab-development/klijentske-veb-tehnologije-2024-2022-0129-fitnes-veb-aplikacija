@@ -1,3 +1,4 @@
+// src/components/Login.tsx
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../models/user';
@@ -5,7 +6,6 @@ import axios from 'axios';
 import { useUser } from '../contexts/UserContext';
 
 const Login: React.FC = () => {
-  const [users, setUsers] = useState<User[]>([]);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -21,8 +21,8 @@ const Login: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const response = await axios.get('/usersData.json');
-      const users: User[] = response.data.users;
+      const response = await axios.get<User[]>('/usersData.json');
+      const users = response.data; // Directly use response.data as an array
       const loggedInUser = users.find(u => u.username === username && u.password === password);
       if (loggedInUser) {
         setUser(loggedInUser);

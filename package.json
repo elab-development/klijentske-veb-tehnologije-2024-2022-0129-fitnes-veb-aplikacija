@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "axios": "^1.7.3",
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
     "fs-extra": "^11.2.0",
     "jquery": "^3.7.1",
     "react": "^18.3.1",
@@ -21,7 +24,8 @@
     "react-router-dom": "^6.25.1",
     "react-transition-group": "^4.4.5",
     "slick-carousel": "^1.8.1",
-    "slicknav": "^1.0.8"
+    "slicknav": "^1.0.8",
+    "write-json-file": "^6.0.0"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.30",
