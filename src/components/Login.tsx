@@ -1,4 +1,3 @@
-// src/components/Login.tsx
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../models/user';
@@ -13,8 +12,8 @@ const Login: React.FC = () => {
 
   useEffect(() => {
     if (user) {
-      alert('You are already logged in!');
       navigate('/');
+      alert('You are already logged in!');
     }
   }, [user, navigate]);
 
@@ -22,7 +21,7 @@ const Login: React.FC = () => {
     event.preventDefault();
     try {
       const response = await axios.get<User[]>('/usersData.json');
-      const users = response.data; // Directly use response.data as an array
+      const users = response.data;
       const loggedInUser = users.find(u => u.username === username && u.password === password);
       if (loggedInUser) {
         setUser(loggedInUser);

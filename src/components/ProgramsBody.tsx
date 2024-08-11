@@ -9,7 +9,7 @@ import { PiBoxingGloveFill } from "react-icons/pi";
 
 
 const programs: Program[] = [
-    new Program('FOOTBALL', 'Messi is the goat', <IoMdFootball></IoMdFootball>, '/programs'),
+    new Program('FOOTBALL', 'Transform Your Game: Reach Pro-Level Football Performance', <IoMdFootball></IoMdFootball>, '/programs/football'),
     new Program('TENIS', 'NOLE DJOLE, DJOLE NOLE, NOVAK DJOKOVIC THE GOAT OF TENIS', <IoIosTennisball></IoIosTennisball>, '/tennis'),
     new Program('BASKETBALL', 'Unlock Your Basketball Potential: Elevate Your Game to Pro Level', <FaBasketball></FaBasketball>, '/programs/basketball'),
     new Program('BOXING', 'onaj cecin', <PiBoxingGloveFill></PiBoxingGloveFill>, '/'),

@@ -3,16 +3,12 @@ import { Tab, Nav, Row } from 'react-bootstrap';
 import OneSchTab from './OneSchTab';
 import { SchTab } from '../models/schtab';
 
-const tabs: SchTab[] = [
-    new SchTab('Rest day', 'Full day','Немања Ђукић'),
-    new SchTab('Basketball drills', '8am - 10am','Немања Ђукић'),
-    new SchTab('Rest', '10am - 5pm','Немања Ђукић'),
-    new SchTab('Pull workout', '5pm - 6pm','Немања Ђукић'),
-    new SchTab('Push workout', '5pm - 6pm','Jack Johnson'),
-    new SchTab('Legs workout', '5pm - 6pm','Adam Smith'),
-];
+interface ScheduleProps {
+    title: string;
+    tabs: SchTab[];
+}
 
-const BasketballSchedule: React.FC = () => {
+const Schedule: React.FC<ScheduleProps> = ({title, tabs}) => {
   return (
     <section className="date-tabs" style={{padding: '5%'}}>
         <div className="container">
@@ -20,7 +16,7 @@ const BasketballSchedule: React.FC = () => {
                 <div className="col-lg-6 col-md-8">
                     <div className="section-tittle text-center mb-100">
                         <span>WORKOUT PLAN</span>
-                        <h2>PREVIEW OF OUR BASKETBALL WORKOUT PROGRAM</h2>
+                        <h2>PREVIEW OF OUR {title} WORKOUT PROGRAM</h2>
                     </div>
                 </div>
             </div>
@@ -107,4 +103,4 @@ const BasketballSchedule: React.FC = () => {
   );
 }
 
-export default BasketballSchedule;
+export default Schedule;

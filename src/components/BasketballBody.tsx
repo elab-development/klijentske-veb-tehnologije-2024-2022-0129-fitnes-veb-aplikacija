@@ -1,16 +1,26 @@
 import React from 'react'
-import BasketballSchedule from './BasketballSchedule'
+import BasketballSchedule from './Schedule'
 import BBHero from '../../assets/img/hero/bball_hero.jpg'
 import BBall from '../../assets/img/gallery/Basketball.jpg';
 import Pricing from './Pricing'
 import Comments from './Comments';
 import { Comment } from '../models/comment';
+import { SchTab } from '../models/schtab';
 
 const comments: Comment[] = [
     new Comment("Jacob Blunt","Great workout plan! I love it! It helped me to join my collage basketball team.","December 4, 2023 at 3:12 pm ", '../../assets/img/comment/comment_1.png'),
     new Comment("Alex Ferguson", "I love this program. 5 stars!", "December 4, 2023 at 3:12 pm ", '../../assets/img/comment/comment_2.png'),
     new Comment("John Doe", "I've been playing this program for 2 years. I can't wait to see where I can improve.", "December 4, 2023 at 3:12 pm ", '../../assets/img/comment/comment_3.png')
 ]
+
+const tabs: SchTab[] = [
+    new SchTab('Rest day', 'Full day','Немања Ђукић'),
+    new SchTab('Basketball drills', '8am - 10am','Немања Ђукић'),
+    new SchTab('Rest', '10am - 5pm','Немања Ђукић'),
+    new SchTab('Pull workout', '5pm - 6pm','Немања Ђукић'),
+    new SchTab('Push workout', '5pm - 6pm','Jack Johnson'),
+    new SchTab('Legs workout', '5pm - 6pm','Adam Smith'),
+];
 
 const BasketballBody: React.FC = () => {
   return (
@@ -39,7 +49,6 @@ const BasketballBody: React.FC = () => {
                         <div className="blog_details">
                             <h2 style={{color: '#2d2d2d'}}>Unlock Your Basketball Potential: Elevate Your Game to Pro Level</h2>
                             <ul className="blog-info-link mt-3 mb-4">
-                                <li><a href="#"><i className="fa fa-user"></i> Basketball</a></li>
                                 <li><a href="#"><i className="fa fa-comments"></i> 03 Comments</a></li>
                             </ul>
                             <p className="excert">
@@ -81,7 +90,7 @@ const BasketballBody: React.FC = () => {
             </div>
         </div>
     </section>
-    <BasketballSchedule />
+    <BasketballSchedule title='BASKETBALL' tabs={tabs}/>
     <Pricing />
     <Comments comments={comments}/>
     </main>
