@@ -40,7 +40,7 @@ const Header: React.FC = () => {
                           <li><Link to="/">Home</Link></li>
                           <li><Link to="/about">About</Link></li>
                           <li><Link to="/programs">Programs</Link></li>
-                          <li><a href="schedule.html">Schedule</a></li>
+                          <li><Link to="/workout_tracker">Workout Tracker</Link></li>
                           <li><Link to="/gallery">Gallery</Link></li>
                           <li><Link to="/contact">Contact</Link></li>
                         </ul>

@@ -15,7 +15,7 @@ const comments: Comment[] = [
 
 const tabs: SchTab[] = [
     new SchTab('Rest day', 'Full day','Немања Ђукић'),
-    new SchTab('Basketball drills', '8am - 10am','Немања Ђукић'),
+    new SchTab('Football drills', '8am - 10am','Немања Ђукић'),
     new SchTab('Rest', '10am - 5pm','Немања Ђукић'),
     new SchTab('Pull workout', '5pm - 6pm','Немања Ђукић'),
     new SchTab('Push workout', '5pm - 6pm','Jack Johnson'),
