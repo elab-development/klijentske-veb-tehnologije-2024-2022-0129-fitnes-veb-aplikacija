@@ -10,6 +10,7 @@ const Header: React.FC = () => {
   const { user, logout } = useUser();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -19,6 +20,11 @@ const Header: React.FC = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(prev => !prev);
   };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  };
+
 
   return (
     <>
@@ -69,7 +75,26 @@ const Header: React.FC = () => {
                   </div>
                 </div>
                 <div className="col-12">
-                  <div className="mobile_menu d-block d-lg-none"></div>
+                  <div className="mobile_menu d-block d-lg-none">
+                    <div className={`slicknav_menu ${isMobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu}>
+                      <a href="#" aria-haspopup="true" role="button" tabIndex={0} className={`slicknav_btn ${isMobileMenuOpen ? 'slicknav_open' : 'slicknav_collapsed'}`} style={{outline: "none"}}>
+                        <span className="slicknav_menutxt">MENU</span>
+                        <span className="slicknav_icon">
+                          <span className="slicknav_icon-bar"></span>
+                          <span className="slicknav_icon-bar"></span>
+                          <span className="slicknav_icon-bar"></span>
+                        </span>
+                      </a>
+                      <ul className={`slicknav_nav ${isMobileMenuOpen ? 'slicknav_visible' : 'slicknav_hidden'}`} aria-hidden={!isMobileMenuOpen} role="menu" style={{display: isMobileMenuOpen ? "block" : "none"}}>
+                        <li><Link to="/" role="menuitem" tabIndex={0}>Home</Link></li>
+                        <li><Link to="/about" role="menuitem" tabIndex={0}>About</Link></li>
+                        <li><Link to="/programs" role="menuitem" tabIndex={0}>Programs</Link></li>
+                        <li><Link to="/workout_tracker" role="menuitem" tabIndex={0}>Workout Tracker</Link></li>
+                        <li><Link to="/gallery" role="menuitem" tabIndex={0}>Gallery</Link></li>
+                        <li><Link to="/contact" role="menuitem" tabIndex={0}>Contact</Link></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

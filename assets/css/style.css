@@ -2714,6 +2714,24 @@ hr {
     margin-top: 0px !important
 }
 
+.slicknav_menu {
+    font-size: 16px;
+    box-sizing: border-box;
+    background: #4c4c4c;
+    padding: 5px;
+}
+
+.slicknav_menu:before {
+    content: " ";
+    display: table;
+}
+
+.slicknav_menu:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
 .mobile_menu .slicknav_menu .slicknav_btn {
     top: -36px
 }
@@ -2738,6 +2756,11 @@ hr {
 
 .mobile_menu .slicknav_menu .slicknav_nav .slicknav_item a {
     padding: 0 !important
+}
+
+.mobile_menu.open {
+    display: block;
+    /* Styles when the mobile menu is open */
 }
 
 .slider-height {
