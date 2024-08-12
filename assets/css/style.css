@@ -3153,6 +3153,11 @@ hr {
     display: block
 }
 
+.cat-icon img {
+    height: 100%;
+    width: 100%;
+}
+
 .services-area .single-cat .cat-cap h5>a {
     font-family: "Teko", sans-serif;
     font-size: 24px;

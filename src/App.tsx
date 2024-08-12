@@ -48,6 +48,7 @@ import {
 } from "react-router-dom";
 
 import Preloader from './components/Preloader';
+import TrackerBody from './components/TrackerBody';
 const BasketballBody = lazy(() => import('./components/BasketballBody'));
 const FootballBody = lazy(() => import('./components/FootballBody'));
 const Register = lazy(() => import('./components/Register'));
@@ -78,6 +79,7 @@ let router = createBrowserRouter(
         <Route path='/tennis' element={<Suspense fallback={<Preloader />}><Header/><Tennis/><Footer/></Suspense>}/>
         <Route path='/programs/basketball' element={<Suspense fallback={<Preloader />}><Header/><BasketballBody/><Footer/></Suspense>}/>
         <Route path='/programs/football' element={<Suspense fallback={<Preloader />}><Header/><FootballBody/><Footer/></Suspense>}/>
+        <Route path='/workout_tracker' element={<Suspense fallback={<Preloader />}><Header/><TrackerBody/><Footer/></Suspense>}></Route>
     </>
     ])
 );

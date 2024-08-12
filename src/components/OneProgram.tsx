@@ -1,5 +1,6 @@
 import React from 'react'
 import { Program } from '../models/program.tsx';
+import { Link } from 'react-router-dom';
 
 interface OneProgramProps {
   program: Program;
@@ -12,11 +13,11 @@ const OneProgram: React.FC<OneProgramProps> = ({program}) => {
                 <i className="flaticon">{program.image}</i>
             </div>
             <div className="cat-cap">
-                <h5><a href={program.link}>{program.name}</a></h5>
+                <h5><Link to={program.link}>{program.name}</Link></h5>
                 <p>{program.description}</p>
             </div>
             <div className="img-cap">
-                <a href={program.link} className="">Discover More <i className="ti-arrow-right"></i></a>
+                <Link to={program.link} className="">Discover More <i className="ti-arrow-right"></i></Link>
             </div>
         </div>
     </div>
