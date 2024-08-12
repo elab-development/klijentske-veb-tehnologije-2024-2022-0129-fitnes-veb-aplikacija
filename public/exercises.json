@@ -1,0 +1,72 @@
+{
+    "exercises": [
+        {
+            "name": "Push-ups",
+            "image": "../../assets/img/exercises icons/push-up.png"
+        },
+        {
+            "name": "Pull-ups",
+            "image": "../../assets/img/exercises icons/pull-up.png"
+        },
+        {
+            "name": "Squats",
+            "image": "../../assets/img/exercises icons/squat.png"
+        },
+        {
+            "name": "Bodyweight-squat",
+            "image": "../../assets/img/exercises icons/bodyweight-squat.png"
+        },
+        {
+            "name": "Deadlifts",
+            "image": "../../assets/img/exercises icons/deadlift.png"
+        },
+        {
+            "name": "Bench press",
+            "image": "../../assets/img/exercises icons/bench-press.png"
+        },
+        {
+            "name": "Shoulder press",
+            "image": "../../assets/img/exercises icons/smith-machine-shoulder-press.png"
+        },
+        {
+            "name": "Dumbbell-bench-press",
+            "image": "../../assets/img/exercises icons/dumbbell-bench-press.png"
+        },
+        {
+            "name": "Smith machine squat",
+            "image": "../../assets/img/exercises icons/smith-machine-squat.png"
+        },
+        {
+            "name": "Incline bench press",
+            "image": "../../assets/img/exercises icons/incline-bench-press.png"
+        },
+        {
+            "name": "Burpees",
+            "image": "../../assets/img/exercises icons/burpee.png"
+        },
+        {
+            "name": "Mountain climbers",
+            "image": "../../assets/img/exercises icons/mountain-climber.png"
+        },
+        {
+            "name": "Sit-ups",
+            "image": "../../assets/img/exercises icons/sit-up.png"
+        },
+        {
+            "name": "Jump rope",
+            "image": "../../assets/img/exercises icons/jump-rope.png"
+        },
+        {
+            "name": "Bicycle crunches",
+            "image": "../../assets/img/exercises icons/bicycle-crunch.png"
+        },
+        {
+            "name": "Leg raises",
+            "image": "../../assets/img/exercises icons/leg-raise.png"
+        },
+        {
+            "name": "Calf raises",
+            "image": "../../assets/img/exercises icons/calf-raise.png"
+        }
+    ]
+}
