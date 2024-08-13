@@ -10,7 +10,7 @@ const Tracker: React.FC = () => {
         const fetchData = async () => {
             const response = await axios.get('/exercises.json');
             const exercisesArray: Exercise[] = response.data.exercises.map((exercise: any) => {
-                return new Exercise(exercise.name, exercise.image);
+                return new Exercise(exercise.name, exercise.image, exercise.tag);
             });
             setExercises(exercisesArray);
         }
@@ -25,7 +25,24 @@ const Tracker: React.FC = () => {
         window.scrollTo({ top: 200, behavior: 'smooth' })
     }
 
-  return (
+    const [selectedCategory, setSelectedCategory] = useState<string>('All');
+
+    const handleCategorySelect = (category: string) => {
+      setSelectedCategory(category);
+    };
+
+    const [search, setSearch] = useState<string>('');
+
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSearch(e.target.value.toLowerCase());
+    };
+
+    const filteredExercises = exercises.filter(exercise => {
+      const categoryMatch = selectedCategory === 'All' || exercise.tag === selectedCategory;
+      const searchMatch = exercise.name.toLowerCase().includes(search) || exercise.tag.toLowerCase().includes(search);
+      return categoryMatch && searchMatch;
+    })
+    return (
     <>
     <section className="contact-form-main" style={{ height: "100%", margin: 0, marginTop: '5%', padding: 0 }}>
       <div className="container">
@@ -95,42 +112,80 @@ const Tracker: React.FC = () => {
                                 <form action="#">
                                     <div className="form-group">
                                         <div className="input-group mb-3">
-                                            <input type="text" className="form-control" placeholder='Search Exercises'/>
+                                            <input type="text" className="form-control" value={search} onChange={handleSearchChange} placeholder='Search Exercises'/>
                                             <div className="input-group-append">
                                                 <button className="btns" type="button"><i className="ti-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
-                                    <button className="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                        type="submit">Search</button>
                                 </form>
+                            </aside>
+                            <aside className="single_sidebar_widget post_category_widget">
+                                <h4 className="widget_title" style={{color: '#2d2d2d'}}>Sport</h4>
+                                <ul className="list cat-list">
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('All')} className="d-flex">
+                                            <p>All</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('Basketball')} className="d-flex">
+                                            <p>Basketball</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('Tennis')} className="d-flex">
+                                            <p>Tennis</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('Football')} className="d-flex">
+                                            <p>Football</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             </aside>
                             <aside className="single_sidebar_widget post_category_widget">
                                 <h4 className="widget_title" style={{color: '#2d2d2d'}}>Category</h4>
                                 <ul className="list cat-list">
                                     <li>
-                                        <a href="#" className="d-flex">
+                                        <a onClick={() => handleCategorySelect('All')} className="d-flex">
+                                            <p>All</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('Abs')} className="d-flex">
+                                            <p>Abs</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('Back')} className="d-flex">
+                                            <p>Back</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('Cardio')} className="d-flex">
+                                            <p>Cardio</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('Chest')} className="d-flex">
                                             <p>Chest</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className="d-flex">
+                                        <a onClick={() => handleCategorySelect('Full body')} className="d-flex">
+                                            <p>Full body</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={() => handleCategorySelect('Legs')} className="d-flex">
                                             <p>Legs</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className="d-flex">
-                                            <p>Tennis drills</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="d-flex">
-                                            <p>Basketball drills</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" className="d-flex">
-                                            <p>...</p>
+                                        <a onClick={() => handleCategorySelect('Shoulders')} className="d-flex">
+                                            <p>Shoulders</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -142,7 +197,7 @@ const Tracker: React.FC = () => {
                             <section className='services-area'>
                                 <div className='container'>
                                     <div className='row'>
-                                        {exercises.map((exercise, index) =>(
+                                        {filteredExercises.map((exercise, index) =>(
                                             <OneExercise key={index} exercise={exercise} onSelect={() => handleExerciseSelect(exercise.name)}></OneExercise>
                                         ))}
                                     </div>
@@ -174,7 +229,7 @@ const Tracker: React.FC = () => {
             </div>
         </section>
     </>
-  )
+    )
 }
 
 export default Tracker
