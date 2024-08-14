@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { User } from '../models/user';
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +26,18 @@ const Register: React.FC = () => {
     e.preventDefault();
 
     const { username, firstName, lastName, email, password, retypePassword } = formData;
+
+    try {
+      const response = await axios.get<User[]>('/usersData.json');
+      const users = response.data;
+      const sameUsername = users.find(u => u.username === username);
+      if (sameUsername) {
+        alert('Username already exists');
+        return;
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
     
     if (password !== retypePassword) {
         alert('Passwords do not match!');

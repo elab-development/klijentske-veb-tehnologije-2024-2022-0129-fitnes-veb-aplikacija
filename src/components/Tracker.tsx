@@ -42,6 +42,23 @@ const Tracker: React.FC = () => {
       const searchMatch = exercise.name.toLowerCase().includes(search) || exercise.tag.toLowerCase().includes(search);
       return categoryMatch && searchMatch;
     })
+
+    const [reps, setReps] = useState<number>(0);
+    const [set, setSet] = useState<number>(0);
+    const [weight, setWeight] = useState<number>(0);
+    const [rows, setRows] = useState<{ exercise: string; reps: number; set: number; weight: number }[]>([]);
+
+    const handleAddRow = () => {
+        const newRow = { exercise: selectedExercise, reps: reps, set: set, weight: weight };
+        setRows([...rows,  newRow]);
+    };
+    
+    const handleDeleteRow = (index: number) => {
+        const updatedRows = rows.filter((_, i) => i !== index);
+        setRows(updatedRows);
+    };
+    
+
     return (
     <>
     <section className="contact-form-main" style={{ height: "100%", margin: 0, marginTop: '5%', padding: 0 }}>
@@ -68,6 +85,7 @@ const Tracker: React.FC = () => {
                         style={{ textTransform: 'none' }}
                         type="number"
                         name="reps"
+                        onChange={(e) => setReps(Number(e.target.value))}
                         placeholder="Reps"
                       />
                     </div>
@@ -78,6 +96,7 @@ const Tracker: React.FC = () => {
                         style={{ textTransform: 'none' }}
                         type="number"
                         name="set"
+                        onChange={(e) => setSet(Number(e.target.value))}
                         placeholder="Set"
                       />
                     </div>
@@ -88,19 +107,89 @@ const Tracker: React.FC = () => {
                         style={{ textTransform: 'none' }}
                         type="number"
                         name="weight"
+                        onChange={(e) => setWeight(Number(e.target.value))}
                         placeholder="Weight / kg"
                       />
                     </div>
                   </div>
                   <div>
                     <div className="submit-info">
-                      <button className="btn" type="submit">Add</button>
+                      <button className="btn" type='button' onClick={handleAddRow}>Add</button>
                     </div>
                   </div>
                 </div>
               </form>
             </div>
-          </div>
+            {rows.length > 0 && (
+                <>
+                    <div className="form-wrapper">
+                        <form id="contact-form">
+                            {rows.map((row, index) => (
+                                <div className="row" style={{ justifyContent: 'space-between', paddingTop: '10px' }} key={index}>
+                                    <div>
+                                        <div className="form-box user-icon mb-30">
+                                            <input
+                                                style={{ textTransform: 'none' }}
+                                                type="text"
+                                                name="exercise"
+                                                placeholder="Selected exercise"
+                                                value={row.exercise}
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="form-box password-icon mb-30">
+                                            <input
+                                                style={{ textTransform: 'none' }}
+                                                type="number"
+                                                name="reps"
+                                                placeholder="Reps"
+                                                value={row.reps}
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="form-box password-icon mb-30">
+                                            <input
+                                                style={{ textTransform: 'none' }}
+                                                type="number"
+                                                name="set"
+                                                placeholder="Set"
+                                                value={row.set}
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="form-box password-icon mb-30">
+                                            <input
+                                                style={{ textTransform: 'none' }}
+                                                type="number"
+                                                name="weight"
+                                                placeholder="Weight / kg"
+                                                value={row.weight}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="submit-info">
+                                            <button className="btn" type="button" onClick={() => handleDeleteRow(index)}>Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                            <div>
+                                <div className="submit-info" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                                    <button className="btn" type="button">Finish Workout</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </>
+            )}
+        </div>
       </div>
     </section>
     <section className="blog_area section-padding" style={{paddingTop: '3%'}}>
