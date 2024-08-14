@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import OneExercise from './OneExercise'
 import { Exercise } from '../models/exercise'
+import { useUser } from '../contexts/UserContext'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Tracker: React.FC = () => {
+    const navigate = useNavigate();
     const [exercises, setExercises] = useState<Exercise[]>([]);
 
     useEffect(()=>{
@@ -57,7 +60,36 @@ const Tracker: React.FC = () => {
         const updatedRows = rows.filter((_, i) => i !== index);
         setRows(updatedRows);
     };
+
+    const [currentUsername, setCurrentUsername] = useState<string>('');
+    const { user } = useUser();
+
+    useEffect(() => {
+        if (user) {
+            const loggedInUsername = user.username;
+            setCurrentUsername(loggedInUsername);
+        }
+        else{
+            alert('Please log in first');
+            navigate('/login');
+        }
+    }, []);
     
+    const handleFinishWorkout = async () => {
+        const workoutData = {
+            username: currentUsername,
+            date: new Date().toISOString(),
+            workoutData: rows
+        }
+        try {
+            const response = await axios.post('http://localhost:5000/api/saveWorkout', workoutData);
+            console.log('Workout saved successfully', response.data);
+            alert('Workout saved successfully');
+            setRows([]);
+        } catch (error) {
+            console.error('Error saving workout:', error);
+        }
+    };
 
     return (
     <>
@@ -182,7 +214,7 @@ const Tracker: React.FC = () => {
                             ))}
                             <div>
                                 <div className="submit-info" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                                    <button className="btn" type="button">Finish Workout</button>
+                                    <button className="btn" type="button" onClick={handleFinishWorkout}>Finish Workout</button>
                                 </div>
                             </div>
                         </form>

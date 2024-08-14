@@ -25,6 +25,26 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
+app.post("/api/saveWorkout", async (req, res) => {
+  const { username, date, workoutData } = req.body;
+
+  try {
+    const data = await readFile("./public/workouts.json", "utf8");
+    const workouts = JSON.parse(data);
+    const newWorkout = { username, date, workoutData };
+    workouts.push(newWorkout);
+
+    await writeFile(
+      "./public/workouts.json",
+      JSON.stringify(workouts, null, 2)
+    );
+    res.send("Workout saved successfully");
+  } catch (err) {
+    console.error("Error handling file:", err);
+    res.status(500).send("Server Error");
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

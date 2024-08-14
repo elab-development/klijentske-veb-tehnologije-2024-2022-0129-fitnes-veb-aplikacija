@@ -1,0 +1,26 @@
+[
+  {
+    "username": "admin",
+    "date": "2024-08-14T14:40:20.754Z",
+    "workoutData": [
+      {
+        "exercise": "Push-ups",
+        "reps": 7,
+        "set": 1,
+        "weight": 10
+      },
+      {
+        "exercise": "Push-ups",
+        "reps": 13,
+        "set": 2,
+        "weight": 9
+      },
+      {
+        "exercise": "Squats",
+        "reps": 10,
+        "set": 1,
+        "weight": 20
+      }
+    ]
+  }
+]
