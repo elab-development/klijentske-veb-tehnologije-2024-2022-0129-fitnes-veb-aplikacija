@@ -5,17 +5,16 @@ import { IoMdFootball } from "react-icons/io";
 import { IoIosTennisball } from "react-icons/io";
 import { FaBasketball } from "react-icons/fa6";
 import { PiBoxingGloveFill } from "react-icons/pi";
-
-
+import { TbBarbell } from "react-icons/tb";
+import { IoAccessibility } from "react-icons/io5";
 
 const programs: Program[] = [
     new Program('FOOTBALL', 'Transform Your Game: Reach Pro-Level Football Performance', <IoMdFootball></IoMdFootball>, '/programs/football'),
     new Program('TENIS', 'NOLE DJOLE, DJOLE NOLE, NOVAK DJOKOVIC THE GOAT OF TENIS', <IoIosTennisball></IoIosTennisball>, '/tennis'),
     new Program('BASKETBALL', 'Unlock Your Basketball Potential: Elevate Your Game to Pro Level', <FaBasketball></FaBasketball>, '/programs/basketball'),
-    new Program('BOXING', 'onaj cecin', <PiBoxingGloveFill></PiBoxingGloveFill>, '/'),
-    new Program('GYM', 'onaj cecin', <PiBoxingGloveFill></PiBoxingGloveFill>, '/'),
-    new Program('STREET WORKOUT', 'onaj cecin', <PiBoxingGloveFill></PiBoxingGloveFill>, '/'),
-    new Program('1-ON-1 SESSION', 'onaj cecin', <PiBoxingGloveFill></PiBoxingGloveFill>, '/'),
+    new Program('BOXING', 'Ignite Your Inner Champion: Transform with Our Elite Boxing Program', <PiBoxingGloveFill></PiBoxingGloveFill>, '/programs/boxing'),
+    new Program('GYM', 'Elevate Your Fitness: Dominate Your Goals with Our Gym Workout Plan', <TbBarbell></TbBarbell>, '/programs/gym'),
+    new Program('STREET WORKOUT', 'Defy Limits: Achieve Peak Performance with Our Street Workout Plan', <IoAccessibility></IoAccessibility>, '/programs/street-workout')
 ];
 
 const ProgramsBody: React.FC = () => {

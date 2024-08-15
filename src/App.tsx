@@ -48,6 +48,9 @@ import {
 } from "react-router-dom";
 
 import Preloader from './components/Preloader';
+const SWBody = lazy(() => import('./components/SWBody'));
+const GymBody = lazy(() => import('./components/GymBody')); 
+const BoxingBody = lazy(() => import ('./components/BoxingBody'));
 const TrackerBody = lazy(() => import('./components/TrackerBody'));
 const BasketballBody = lazy(() => import('./components/BasketballBody'));
 const FootballBody = lazy(() => import('./components/FootballBody'));
@@ -79,6 +82,9 @@ let router = createBrowserRouter(
         <Route path='/tennis' element={<Suspense fallback={<Preloader />}><Header/><Tennis/><Footer/></Suspense>}/>
         <Route path='/programs/basketball' element={<Suspense fallback={<Preloader />}><Header/><BasketballBody/><Footer/></Suspense>}/>
         <Route path='/programs/football' element={<Suspense fallback={<Preloader />}><Header/><FootballBody/><Footer/></Suspense>}/>
+        <Route path='/programs/boxing' element={<Suspense fallback={<Preloader />}><Header/><BoxingBody/><Footer/></Suspense>}/>
+        <Route path='/programs/gym' element={<Suspense fallback={<Preloader />}><Header/><GymBody/><Footer/></Suspense>}/>
+        <Route path='/programs/street-workout' element={<Suspense fallback={<Preloader />}><Header/><SWBody/><Footer/></Suspense>}/>
         <Route path='/workout_tracker' element={<Suspense fallback={<Preloader />}><Header/><TrackerBody/><Footer/></Suspense>}></Route>
     </>
     ])
