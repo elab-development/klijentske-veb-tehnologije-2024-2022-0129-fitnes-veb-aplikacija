@@ -48,7 +48,7 @@ import {
 } from "react-router-dom";
 
 import Preloader from './components/Preloader';
-import TrackerBody from './components/TrackerBody';
+const TrackerBody = lazy(() => import('./components/TrackerBody'));
 const BasketballBody = lazy(() => import('./components/BasketballBody'));
 const FootballBody = lazy(() => import('./components/FootballBody'));
 const Register = lazy(() => import('./components/Register'));

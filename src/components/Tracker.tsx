@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Tracker: React.FC = () => {
     const navigate = useNavigate();
+    const [exercisesJSON, setExercisesJSON] = useState<Exercise[]>([]);
+    const [exercisesAPI, setExercisesAPI] = useState<Exercise[]>([]);
     const [exercises, setExercises] = useState<Exercise[]>([]);
 
     useEffect(()=>{
@@ -15,11 +17,41 @@ const Tracker: React.FC = () => {
             const exercisesArray: Exercise[] = response.data.exercises.map((exercise: any) => {
                 return new Exercise(exercise.name, exercise.image, exercise.tag);
             });
-            setExercises(exercisesArray);
+            setExercisesJSON(exercisesArray);
         }
-
         fetchData();
     }, []);
+    useEffect(()=>{
+        const fetchData = async () => {
+            const options = {
+                method: 'GET',
+                url: 'https://exercisedb.p.rapidapi.com/exercises',
+                params: {
+                    limit: '20',
+                    offset: '0'
+                },
+                headers: {
+                    'x-rapidapi-key': '4924bcd8e0msh7534f3a1caaf78ep18a4a6jsna73b9640cb8d',
+                    'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
+                }
+            };
+            try {
+                const response = await axios.request(options);
+                const exercisesArray: Exercise[] = response.data.map((exercise: any) => {
+                return new Exercise(exercise.name, exercise.gifUrl, exercise.target.charAt(0).toUpperCase() + exercise.target.slice(1));
+            });
+            setExercisesAPI(exercisesArray);
+            } catch (error) {
+                console.error(error);
+            }   
+        }
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        setExercises([...exercisesJSON, ...exercisesAPI]);
+    }, [exercisesJSON, exercisesAPI]);
+
 
     const [selectedExercise, setSelectedExercise] = useState<string>('')
 
