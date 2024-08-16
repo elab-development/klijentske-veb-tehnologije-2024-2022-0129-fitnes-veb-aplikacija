@@ -49,13 +49,9 @@ const ProgramsBody: React.FC = () => {
             </section>
             <div className="container">
                 <div className="row">
-                    <OneProgram program={programs[0]}></OneProgram>
-                    <OneProgram program={programs[1]}></OneProgram>
-                    <OneProgram program={programs[2]}></OneProgram>
-                    <OneProgram program={programs[3]}></OneProgram>
-                    <OneProgram program={programs[4]}></OneProgram>
-                    <OneProgram program={programs[5]}></OneProgram>
-                    <OneProgram program={programs[6]}></OneProgram>
+                    {programs.map((program, index) => (
+                        <OneProgram key={index} program={program}></OneProgram>
+                    ))}
                 </div>
             </div>
         </section>

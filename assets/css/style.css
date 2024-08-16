@@ -7088,10 +7088,12 @@ del {
 .profile-dropdown .dropdown-menu {
     display: block;
     position: absolute;
+    width: 200px;
     padding: 0;
     margin-top: 4px;
     top: 100%;
-    left: -50%;
+    right: -90%;
+    left: auto;
     background-color: black;
     border: 1px solid #f04e3c;
     z-index: 1000;

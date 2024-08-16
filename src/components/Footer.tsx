@@ -15,8 +15,9 @@ const Footer: React.FC = () => {
                                     <h4>COMPANY</h4>
                                     <ul>
                                         <li><Link to="/about">About Us</Link></li>
-                                        <li><Link to="/">Company</Link></li>
-                                        <li><Link to="/"> Privacy Policy</Link></li>
+                                        <li><Link to="/programs">Programs</Link></li>
+                                        <li><Link to="/gallery"> Gallery</Link></li>
+                                        <li><Link to="/contact"> Contact</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -24,30 +25,17 @@ const Footer: React.FC = () => {
                         <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                             <div className="single-footer-caption mb-50">
                                 <div className="footer-tittle">
-                                    <h4>Open hour</h4>
+                                    <h4>Some Of Our Programs</h4>
                                     <ul>
-                                        <li><a href="#">Monday 11am-7pm</a></li>
-                                        <li><a href="#"> Tuesday-Friday 11am-8pm</a></li>
-                                        <li><a href="#"> Saturday 10am-6pm</a></li>
-                                        <li><a href="#"> Sunday 11am-6pm</a></li>
+                                        <li><Link to={'/programs/football'}>Football</Link></li>
+                                        <li><Link to={'/programs/tennis'}> Tennis</Link></li>
+                                        <li><Link to={'/programs/basketball'}> Basketball</Link></li>
+                                        <li><Link to={'/programs/boxing'}> Boxing</Link></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                            <div className="single-footer-caption mb-50">
-                                <div className="footer-tittle">
-                                    <h4>RESOURCES</h4>
-                                    <ul>
-                                        <li><a href="#">Home Insurance</a></li>
-                                        <li><a href="#">Travel Insurance</a></li>
-                                        <li><a href="#"> Car Insurance</a></li>
-                                        <li><a href="#"> Business Insurance</a></li>
-                                        <li><a href="#"> Heal Insurance</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div className="col-xl-3 col-lg-4 col-md-5 col-sm-6">
                             <div className="single-footer-caption mb-50">
                                 <div className="footer-logo">
@@ -55,7 +43,7 @@ const Footer: React.FC = () => {
                                 </div>
                                 <div className="footer-tittle">
                                     <div className="footer-pera">
-                                        <p className="info1">GThe trade war currently ensuing between te US anfd several natxions around thdhe globe, most fiercely with.</p>
+                                        <p className="info1">We help you to elevate your fitness preformance to the pro level</p>
                                     </div>
                                 </div>
                                 <div className="footer-social ">
@@ -73,7 +61,7 @@ const Footer: React.FC = () => {
                         <div className="col-lg-12">
                             <div className="footer-copy-right text-center">
                                 <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i className="fa fa-heart" aria-hidden="true"></i> by Drkule and Đukule
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made by Milica Drljača 2022/0234 and Nemanja Đukić 2022/0129
                                 </p>
                             </div>
                         </div>

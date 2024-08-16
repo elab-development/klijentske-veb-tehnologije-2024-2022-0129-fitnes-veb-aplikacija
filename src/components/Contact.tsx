@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
         };
 
         try {
-	        const response = await axios.request(options);
+	        await axios.request(options);
             alert('Email sent successfully!');
             form.reset();
         } catch (error) {
@@ -64,8 +64,8 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div className="col-lg-6 col-md-6 mb-30">
                                         <div className="select-itms" style={{paddingTop: '15px'}}>
-                                            <select name="program" id="program" required style={{color: 'gray', width: '100%', height: '45px', background: 'transparent', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderBottom: '2px solid #e9f0f4', fontSize: '16px', padding: '10px 22px', paddingRight: '30px', fontWeight: '500'}}>
-                                                <option value="0" disabled selected>Select your program</option>
+                                            <select name="program" id="program" defaultValue={'0'} required style={{color: 'gray', width: '100%', height: '45px', background: 'transparent', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderBottom: '2px solid #e9f0f4', fontSize: '16px', padding: '10px 22px', paddingRight: '30px', fontWeight: '500'}}>
+                                                <option value="0" disabled>Select your program</option>
                                                 <option value="No program/new member">No program/new member</option>
                                                 <option value="Boxing">Boxing</option>
                                                 <option value="Basketball">Basketball</option>

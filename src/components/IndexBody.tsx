@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import '../../assets/css/Slider.css';
 import About from './About'
@@ -22,19 +22,20 @@ const services: Program[] = [
 
 const slides = [
     {
-        spanText: 'with Drki and Đuka',
+        spanText: 'with Athlete X',
         h1Text: 'Learn to play every sport in one place.',
         btnText: 'become a member',
     },
     {
-        spanText: 'with Bora and Majstor Ž',
+        spanText: 'with Athlete X',
         h1Text: 'Join us so you can become an Athlete X too.',
         btnText: 'become a member',
     },
 ];
 
 const IndexBody: React.FC = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState<number>(0);
+    const nodeRef = useRef(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -43,8 +44,10 @@ const IndexBody: React.FC = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+    
     return (
-    <main>
+      <main>
         <div className="slider-area position-relative">
             <div className="slider-active">
                 <TransitionGroup>
@@ -52,8 +55,9 @@ const IndexBody: React.FC = () => {
                         key={currentSlide}
                         timeout={2000}
                         classNames="slide"
+                        nodeRef={nodeRef}
                     >
-                        <div className="single-slider slider-height d-flex align-items-center">
+                        <div ref={nodeRef} className="single-slider slider-height d-flex align-items-center">
                             <div className="container">
                                 <div className="row">
                                     <div className="col-xl-7 col-lg-9 col-md-8 col-sm-9">
@@ -78,7 +82,7 @@ const IndexBody: React.FC = () => {
         <Gallery/>
         <OurTeam/>
         <Contact/>
-    </main>
+      </main>
   )
 }
 
