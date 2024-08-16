@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-box user-icon mb-30">
-                                            <input type="text" name="from_name" placeholder="Name" style={{textTransform: 'none'}}/>
+                                            <input type="text" name="from_name" placeholder="Name" style={{textTransform: 'none'}} required/>
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6">
@@ -77,12 +77,12 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-box subject-icon mb-30">
-                                            <input type="Email" name="from_email" placeholder="Email" style={{textTransform: 'none'}}/>
+                                            <input type="Email" name="from_email" placeholder="Email" style={{textTransform: 'none'}} required/>
                                         </div>
                                     </div>
                                     <div className="col-lg-12">
                                         <div className="form-box message-icon mb-65">
-                                            <textarea name="message" id="message" placeholder="Message" style={{textTransform: 'none'}}></textarea>
+                                            <textarea name="message" id="message" placeholder="Message" style={{textTransform: 'none'}} required></textarea>
                                         </div>
                                         <div className="submit-info">
                                             <button className="btn" type="submit">Send a Message</button>

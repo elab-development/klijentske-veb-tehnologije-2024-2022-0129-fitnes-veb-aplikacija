@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useScrollHandler from '../CustomHooks/useScrollHandler';
 import logo from '../../assets/img/logo/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
@@ -25,6 +25,13 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(prev => !prev);
   };
 
+  const [currentUsername, setCurrentUsername] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (user) {
+        setCurrentUsername(user.username);
+    }
+  }, []);
 
   return (
     <>
@@ -63,7 +70,7 @@ const Header: React.FC = () => {
                           />
                           {isDropdownOpen && (
                             <div className="dropdown-menu">
-                              <Link to="/profile" className="dropdown-item">Profile</Link>
+                              <Link to={`/${currentUsername}`} className="dropdown-item">Profile</Link>
                               <button onClick={handleLogout} className="dropdown-item">Log out</button>
                             </div>
                           )}
