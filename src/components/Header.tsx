@@ -21,17 +21,14 @@ const Header: React.FC = () => {
     setIsDropdownOpen(prev => !prev);
   };
 
+  const handleProfilePage = () => {
+    setIsDropdownOpen(false);
+    navigate('/profile');
+  };
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(prev => !prev);
   };
-
-  const [currentUsername, setCurrentUsername] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (user) {
-        setCurrentUsername(user.username);
-    }
-  }, []);
 
   return (
     <>
@@ -70,7 +67,7 @@ const Header: React.FC = () => {
                           />
                           {isDropdownOpen && (
                             <div className="dropdown-menu">
-                              <Link to={`/${currentUsername}`} className="dropdown-item">Profile</Link>
+                              <button onClick={handleProfilePage} className="dropdown-item">Profile</button>
                               <button onClick={handleLogout} className="dropdown-item">Log out</button>
                             </div>
                           )}

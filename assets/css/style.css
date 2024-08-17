@@ -7069,6 +7069,19 @@ del {
     height: 100%;
 }
 
+.profile {
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+.profile .profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #f04e3c;
+    cursor: initial;
+}
+
 .profile-dropdown {
     position: relative;
 }

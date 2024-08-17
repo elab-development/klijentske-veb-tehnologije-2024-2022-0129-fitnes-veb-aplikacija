@@ -48,7 +48,7 @@ import {
 } from "react-router-dom";
 
 import Preloader from './components/Preloader';
-import ProfilePage from './components/ProfilePage';
+const ProfilePage = lazy(() => import('./components/ProfilePage'));
 const SWBody = lazy(() => import('./components/SWBody'));
 const GymBody = lazy(() => import('./components/GymBody')); 
 const BoxingBody = lazy(() => import ('./components/BoxingBody'));
@@ -69,18 +69,6 @@ const Tennis = lazy(() => import('./components/Tennis'));
 
 
 const App: React.FC = () => {
-    const [currentUsername, setCurrentUsername] = useState<string>('');
-    const { user } = useUser();
-
-    useEffect(() => {
-        if (user) {
-            setCurrentUsername(user.username);
-            console.log(currentUsername);
-        }
-        else{
-            setCurrentUsername('');
-        }
-    }, [user]);
   
 let router = createBrowserRouter(
     createRoutesFromElements([
@@ -99,7 +87,7 @@ let router = createBrowserRouter(
         <Route path='/programs/gym' element={<Suspense fallback={<Preloader />}><Header/><GymBody/><Footer/></Suspense>}/>
         <Route path='/programs/street-workout' element={<Suspense fallback={<Preloader />}><Header/><SWBody/><Footer/></Suspense>}/>
         <Route path='/workout_tracker' element={<Suspense fallback={<Preloader />}><Header/><TrackerBody/><Footer/></Suspense>}></Route>
-        <Route path={`/${currentUsername}`} element={<Suspense fallback={<Preloader />}><Header/><ProfilePage/><Footer/></Suspense>}/>
+        <Route path='/profile' element={<Suspense fallback={<Preloader />}><Header/><ProfilePage/><Footer/></Suspense>}/>
     </>
     ])
 );
