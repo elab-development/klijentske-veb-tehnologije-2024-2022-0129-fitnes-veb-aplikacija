@@ -65,27 +65,24 @@ const ProfilePage: React.FC = () => {
   }
 
   const [quote, setQuote] = useState({
-    text: '',
-    author: ''
+    quote: '',
+    author: '',
+    category: ''
   });
 
   useEffect(()=>{
     const fetchData = async () => {
       const options = {
         method: 'GET',
-        url: 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote',
-        params: {
-          token: 'ipworld.info'
-        },
+        url: 'https://api.api-ninjas.com/v1/quotes?category=inspirational',
         headers: {
-          'x-rapidapi-key': '4924bcd8e0msh7534f3a1caaf78ep18a4a6jsna73b9640cb8d',
-          'x-rapidapi-host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com'
+          'X-Api-Key': 'qdsiPTWpIHNxM9oUS7pa8A==IWKFvQY5fEhwJmBy',
         }
       };
       
       try {
         const response = await axios.request(options);
-        setQuote(response.data);
+        setQuote(response.data[0]);
       } catch (error) {
         console.error(error);
       }
@@ -194,7 +191,7 @@ const ProfilePage: React.FC = () => {
                         <div className="quote-wrapper">
                             <p>Motivational quote for you: </p>
                             <div className="quotes">
-                                <p>{quote.text}</p>
+                                <p>{quote.quote}</p>
                                 - {quote.author}
                             </div>
                         </div>
