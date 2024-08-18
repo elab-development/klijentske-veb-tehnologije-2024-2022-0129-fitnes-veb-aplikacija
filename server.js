@@ -25,6 +25,31 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
+app.put("/api/updateUser", async (req, res) => {
+  const { username, fullName, email } = req.body;
+
+  try {
+    const data = await readFile("./public/usersData.json", "utf8");
+    const users = JSON.parse(data);
+    const userIndex = users.findIndex((user) => user.username === username);
+    if (userIndex === -1) {
+      return res.status(404).send("User not found");
+    }
+
+    users[userIndex] = {
+      ...users[userIndex],
+      fullName,
+      email,
+    };
+
+    await writeFile("./public/usersData.json", JSON.stringify(users, null, 2));
+    res.send("User updated successfully");
+  } catch (err) {
+    console.error("Error handling file:", err);
+    res.status(500).send("Server Error");
+  }
+});
+
 app.post("/api/saveWorkout", async (req, res) => {
   const { username, date, workoutData } = req.body;
 
