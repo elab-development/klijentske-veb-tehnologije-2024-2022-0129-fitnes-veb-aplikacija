@@ -78,6 +78,14 @@ const Tracker: React.FC = () => {
       return categoryMatch && searchMatch;
     })
 
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const exercisesPerPage = 12;
+
+    const indexOfLastExercise = currentPage * exercisesPerPage;
+    const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+    const totalPages = Array.from({length:Math.ceil(filteredExercises.length / exercisesPerPage)},(_, index) => index + 1);
+    const currentExercises = filteredExercises.slice(indexOfFirstExercise, indexOfLastExercise);
+
     const [reps, setReps] = useState<number>(0);
     const [set, setSet] = useState<number>(0);
     const [weight, setWeight] = useState<number>(0);
@@ -260,7 +268,7 @@ const Tracker: React.FC = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-4">
-                        <div className="blog_right_sidebar">
+                        <div className="blog_right_sidebar" style={{ position: 'sticky', top: '140px', maxHeight: '600px', overflowY: 'auto', scrollbarWidth: 'none'}}>
                             <aside className="single_sidebar_widget search_widget">
                                 <form action="#">
                                     <div className="form-group">
@@ -350,7 +358,7 @@ const Tracker: React.FC = () => {
                             <section className='services-area'>
                                 <div className='container'>
                                     <div className='row'>
-                                        {filteredExercises.map((exercise, index) =>(
+                                        {currentExercises.map((exercise, index) =>(
                                             <OneExercise key={index} exercise={exercise} onSelect={() => handleExerciseSelect(exercise.name)}></OneExercise>
                                         ))}
                                     </div>
@@ -358,21 +366,22 @@ const Tracker: React.FC = () => {
                             </section>
                             <nav className="blog-pagination justify-content-center d-flex">
                                 <ul className="pagination">
-                                    <li className="page-item">
-                                        <a href="#" className="page-link" aria-label="Previous">
+                                    <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                                        <button className="page-link" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
                                             <i className="ti-angle-left"></i>
-                                        </a>
+                                        </button>
                                     </li>
-                                    <li className="page-item">
-                                        <a href="#" className="page-link">1</a>
-                                    </li>
-                                    <li className="page-item active">
-                                        <a href="#" className="page-link">2</a>
-                                    </li>
-                                    <li className="page-item">
-                                        <a href="#" className="page-link" aria-label="Next">
+                                    {totalPages.map((_, index) => (
+                                        <li key={index} className={`page-item ${index + 1 === currentPage ? 'active' : ''}`}>
+                                            <button className="page-link" onClick={() => setCurrentPage(index + 1)}>
+                                                {index + 1}
+                                            </button>
+                                        </li>
+                                    ))}
+                                    <li className={`page-item ${currentPage === Math.ceil(filteredExercises.length / exercisesPerPage) ? 'disabled' : ''}`}>
+                                        <button className="page-link" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(filteredExercises.length / exercisesPerPage)}>
                                             <i className="ti-angle-right"></i>
-                                        </a>
+                                        </button>
                                     </li>
                                 </ul>
                             </nav>
