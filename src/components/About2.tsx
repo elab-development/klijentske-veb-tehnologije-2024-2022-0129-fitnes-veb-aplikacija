@@ -74,7 +74,7 @@ const About2: React.FC = () => {
                                 </div>
                             </CSSTransition>
                         </TransitionGroup>
-                        <div className="buttons ">
+                        <div className="buttons">
                             <button onClick={prevSlide}><FaChevronLeft/></button>
                             <button onClick={nextSlide}><FaChevronRight/></button>
                         </div>

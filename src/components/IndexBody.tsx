@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import '../../assets/css/Slider.css';
 import About from './About'
@@ -35,7 +35,6 @@ const slides = [
 
 const IndexBody: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
-    const nodeRef = useRef(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -55,9 +54,8 @@ const IndexBody: React.FC = () => {
                         key={currentSlide}
                         timeout={2000}
                         classNames="slide"
-                        nodeRef={nodeRef}
                     >
-                        <div ref={nodeRef} className="single-slider slider-height d-flex align-items-center">
+                        <div className="single-slider slider-height d-flex align-items-center">
                             <div className="container">
                                 <div className="row">
                                     <div className="col-xl-7 col-lg-9 col-md-8 col-sm-9">

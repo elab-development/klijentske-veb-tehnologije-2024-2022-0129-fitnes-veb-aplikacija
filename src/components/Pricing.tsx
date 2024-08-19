@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { FcCheckmark } from "react-icons/fc";
 import { FcCancel } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
-const Pricing: React.FC = () => {
+interface PricingProps {
+    sport: string;
+    setBoughtProgram: Dispatch<SetStateAction<{ name: string; price: string }>>;
+}
+
+const Pricing: React.FC<PricingProps> = ({sport, setBoughtProgram}) => {
   return (
     <section className="pricing-area" style={{padding: '5%'}}>
         <div className="container">
@@ -30,7 +36,7 @@ const Pricing: React.FC = () => {
                             <li><FcCancel/> 1-on-1 virtual coaching sessions</li>
                             <li><FcCancel/> Mental performance coaching</li>
                         </ul>
-                        <a href="#" className="primary-btn pricing-btn">Enroll now</a>
+                        <Link to={"/cart"} className="primary-btn pricing-btn" onClick={() => setBoughtProgram({name:`${sport} basic`, price: "free"})}>Enroll now</Link>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-8">
@@ -48,7 +54,7 @@ const Pricing: React.FC = () => {
                             <li><FcCancel/> 1-on-1 virtual coaching sessions</li>
                             <li><FcCancel/> Mental performance coaching</li>
                         </ul>
-                        <a href="#" className="primary-btn pricing-btn">Enroll now</a>
+                        <Link to={"/cart"} className="primary-btn pricing-btn" onClick={() => setBoughtProgram({name: `${sport} advanced`,price: "$29.9 / month"})}>Enroll now</Link>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-8">
@@ -66,7 +72,7 @@ const Pricing: React.FC = () => {
                             <li><FcCheckmark/> 1-on-1 virtual coaching sessions</li>
                             <li><FcCheckmark/> Mental performance coaching</li>
                         </ul>
-                        <a href="#" className="primary-btn pricing-btn">Enroll now</a>
+                        <Link to={"/cart"} className="primary-btn pricing-btn" onClick={() => setBoughtProgram({name: `${sport} pro`,price: "$69.9 / month"})}>Enroll now</Link>
                     </div>
                 </div>
             </div>

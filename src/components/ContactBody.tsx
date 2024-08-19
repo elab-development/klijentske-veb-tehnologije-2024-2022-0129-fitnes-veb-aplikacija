@@ -1,7 +1,7 @@
 import React from 'react'
 import Contact from './Contact'
 
-const ContactBody = () => {
+const ContactBody: React.FC = () => {
   return (
     <main>
         <div className="slider-area2">

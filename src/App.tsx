@@ -1,5 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react';
-import { UserProvider, useUser } from './contexts/UserContext';
+import React, { lazy, Suspense, useState } from 'react';
 
 import '../assets/css/style.css';
 import '../assets/css/bootstrap.min.css';
@@ -48,6 +47,7 @@ import {
 } from "react-router-dom";
 
 import Preloader from './components/Preloader';
+import Cart from './components/Cart';
 const ProfilePage = lazy(() => import('./components/ProfilePage'));
 const SWBody = lazy(() => import('./components/SWBody'));
 const GymBody = lazy(() => import('./components/GymBody')); 
@@ -69,6 +69,10 @@ const Tennis = lazy(() => import('./components/Tennis'));
 
 
 const App: React.FC = () => {
+    const [buyProgram, setBoughtProgram] = useState({
+        name: '',
+        price: ''
+    })
   
 let router = createBrowserRouter(
     createRoutesFromElements([
@@ -81,13 +85,14 @@ let router = createBrowserRouter(
         <Route path='/login' element={<Suspense fallback={<Preloader />}><Login/></Suspense>}/>
         <Route path='/register' element={<Suspense fallback={<Preloader />}><Register/></Suspense>}/>
         <Route path='/tennis' element={<Suspense fallback={<Preloader />}><Header/><Tennis/><Footer/></Suspense>}/>
-        <Route path='/programs/basketball' element={<Suspense fallback={<Preloader />}><Header/><BasketballBody/><Footer/></Suspense>}/>
-        <Route path='/programs/football' element={<Suspense fallback={<Preloader />}><Header/><FootballBody/><Footer/></Suspense>}/>
-        <Route path='/programs/boxing' element={<Suspense fallback={<Preloader />}><Header/><BoxingBody/><Footer/></Suspense>}/>
-        <Route path='/programs/gym' element={<Suspense fallback={<Preloader />}><Header/><GymBody/><Footer/></Suspense>}/>
-        <Route path='/programs/street-workout' element={<Suspense fallback={<Preloader />}><Header/><SWBody/><Footer/></Suspense>}/>
-        <Route path='/workout_tracker' element={<Suspense fallback={<Preloader />}><Header/><TrackerBody/><Footer/></Suspense>}></Route>
+        <Route path='/programs/basketball' element={<Suspense fallback={<Preloader />}><Header/><BasketballBody setBoughtProgram={setBoughtProgram}/><Footer/></Suspense>}/>
+        <Route path='/programs/football' element={<Suspense fallback={<Preloader />}><Header/><FootballBody setBoughtProgram={setBoughtProgram}/><Footer/></Suspense>}/>
+        <Route path='/programs/boxing' element={<Suspense fallback={<Preloader />}><Header/><BoxingBody setBoughtProgram={setBoughtProgram}/><Footer/></Suspense>}/>
+        <Route path='/programs/gym' element={<Suspense fallback={<Preloader />}><Header/><GymBody setBoughtProgram={setBoughtProgram}/><Footer/></Suspense>}/>
+        <Route path='/programs/street-workout' element={<Suspense fallback={<Preloader />}><Header/><SWBody setBoughtProgram={setBoughtProgram}/><Footer/></Suspense>}/>
+        <Route path='/workout_tracker' element={<Suspense fallback={<Preloader />}><Header/><TrackerBody/><Footer/></Suspense>}/>
         <Route path='/profile' element={<Suspense fallback={<Preloader />}><Header/><ProfilePage/><Footer/></Suspense>}/>
+        <Route path='/cart' element={<Suspense fallback={<Preloader />}><Header/><Cart name={buyProgram.name} price={buyProgram.price}/><Footer/></Suspense>}/>
     </>
     ])
 );

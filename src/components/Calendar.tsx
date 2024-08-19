@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Calendar = () => {
+const Calendar: React.FC = () => {
   return (
     <section className="date-tabs section-padding30">
             <div className="container">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import useScrollHandler from '../CustomHooks/useScrollHandler';
 import logo from '../../assets/img/logo/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
@@ -96,6 +96,14 @@ const Header: React.FC = () => {
                         <li><Link to="/workout_tracker" role="menuitem" tabIndex={0}>Workout Tracker</Link></li>
                         <li><Link to="/gallery" role="menuitem" tabIndex={0}>Gallery</Link></li>
                         <li><Link to="/contact" role="menuitem" tabIndex={0}>Contact</Link></li>
+                        {user ? (
+                          <>
+                            <li><button role="menuitem" tabIndex={0} onClick={handleProfilePage} className="dropdown-item">Profile</button></li>
+                            <li><button role='menuitem' tabIndex={0} onClick={handleLogout} className="dropdown-item">Log out</button></li>
+                          </>
+                        ) : (
+                          <li><Link to="/login" role='menuitem' tabIndex={0}>Become a member</Link></li>
+                        )}
                       </ul>
                     </div>
                   </div>

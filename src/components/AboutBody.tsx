@@ -3,7 +3,7 @@ import About from './About'
 import About2 from './About2'
 import OurTeam from './OurTeam'
 
-const AboutBody = () => {
+const AboutBody: React.FC = () => {
   return (
     <main>
         <div className="slider-area2">

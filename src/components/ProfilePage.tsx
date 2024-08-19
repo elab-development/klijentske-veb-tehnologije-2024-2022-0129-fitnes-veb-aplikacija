@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useUser } from '../contexts/UserContext';
 import { Chart } from "react-google-charts";
@@ -27,6 +26,7 @@ export const MaxVolumeChartOptions = {
 };
 
 const ProfilePage: React.FC = () => {
+  
   const [username, setUsername] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');

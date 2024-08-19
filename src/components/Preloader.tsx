@@ -1,5 +1,6 @@
 import React from 'react'
 import Loader from '../../assets/img/logo/loder.png'
+
 const Preloader: React.FC = () => {
   return (
     <div id="preloader-active">

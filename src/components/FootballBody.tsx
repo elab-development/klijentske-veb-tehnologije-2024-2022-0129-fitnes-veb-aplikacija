@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import FHero from '../../assets/img/hero/fball_hero.jpg'
 import FBall from '../../assets/img/gallery/football.jpg';
 import Pricing from './Pricing'
@@ -22,7 +22,11 @@ const tabs: SchTab[] = [
     new SchTab('Legs workout', '5pm - 6pm','Adam Smith'),
 ];
 
-const FootballBody: React.FC = () => {
+interface FootballProps {
+    setBoughtProgram: Dispatch<SetStateAction<{ name: string; price: string }>>;
+}
+
+const FootballBody: React.FC<FootballProps> = ({setBoughtProgram}) => {
   return (
     <main>
         <div className="slider-area2" style={{backgroundImage: `url(${FHero})`}}>
@@ -78,7 +82,7 @@ const FootballBody: React.FC = () => {
         </div>
     </section>
     <Schedule title='FOOTBALL' tabs={tabs}/>
-    <Pricing />
+    <Pricing sport='football' setBoughtProgram={setBoughtProgram}/>
     <Comments comments={comments}/>
     </main>
   )

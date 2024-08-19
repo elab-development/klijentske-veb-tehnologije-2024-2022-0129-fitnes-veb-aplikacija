@@ -1,7 +1,7 @@
 import React from 'react'
 import Gallery from './Gallery'
 
-const GalleryBody = () => {
+const GalleryBody: React.FC = () => {
   return (
     <main>
     <div className="slider-area2">

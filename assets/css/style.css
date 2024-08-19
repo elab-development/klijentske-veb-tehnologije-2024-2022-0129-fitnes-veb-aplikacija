@@ -7422,3 +7422,32 @@ del {
 .list.cat-list li p {
     cursor: pointer;
 }
+
+.cart-section {
+    background-color: #f7fbff;
+}
+
+.cart-section .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 150px;
+}
+
+.cart-section .cart-table td,
+.cart-section .cart-table th {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #dee2e6;
+    font-size: 16px;
+    font-family: 'Barlow' sans-serif;
+}
+
+.cart-section .container {
+    background-color: white;
+    padding: 3%;
+}
+
+.cart-section .one-section {
+    padding-bottom: 5%;
+    border-bottom: 2px solid #dee2e6;
+}
