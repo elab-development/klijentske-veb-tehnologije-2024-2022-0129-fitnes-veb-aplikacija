@@ -1,30 +1,56 @@
-# React + TypeScript + Vite
+# Athlete X
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Athlete X is a comprehensive workout and sports management platform designed to help users track their fitness progress and access a variety of workout programs tailored to different sports. Whether you're interested in basketball, football, gym workouts, or street workouts, this app provides everything you need to become a better athlete.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
 
-## Expanding the ESLint configuration
+- Workout Programs: Access tailored workout plans for various sports like basketball, football, tennis, gym workouts, and street workouts.
+- Workout Tracker: Track your workout progress, including sets, reps, weights, and specific exercises.
+- Workout Analysis: Analyze your workout data with provided charts and graphs to monitor progress, identify trends, and optimize your training regimen.
+- User Authentication: Secure user registration and login system.
+- Responsive Design: Fully responsive UI that works seamlessly across devices.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Prerequisites
+
+Ensure you have the following installed on your system:
+
+- `Node.js`
+- `npm`
+  - To install Node.js and npm, visit the official Node.js website: https://nodejs.org/ and download the installer for your operating system. Follow the further setup instructions.
+- `Git`
+  - To install Git, download the Git installer from the official website: https://git-scm.com/download. Run the installer and follow further setup instructions.
+
+### Installation
+
+- Clone this repository using these commands:
+
+```bash
+git clone https://github.com/elab-development/klijentske-veb-tehnologije-2024-2022-0129-fitnes-veb-aplikacija.git
+cd klijentske-veb-tehnologije-2024-2022-0129-fitnes-veb-aplikacija
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Install dependencies:
+
+```bash
+npm install
+```
+
+- Run the backend server:
+
+```bash
+node server.js
+```
+
+- In a separate terminal window, start the React development server:
+
+```bash
+npm run dev
+```
+
+After this command you will get the link looking like this: `http://localhost:4000` in your terminal window. Click on it and the app will open in your default browser.
