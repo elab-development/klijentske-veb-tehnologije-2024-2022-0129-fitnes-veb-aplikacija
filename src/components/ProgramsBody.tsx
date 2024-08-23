@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import OneProgram from './OneProgram'
 import { Program } from '../models/program';
 import { IoMdFootball } from "react-icons/io";
@@ -18,6 +18,9 @@ const programs: Program[] = [
 ];
 
 const ProgramsBody: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
   return (
     <main>
         <div className="slider-area2">

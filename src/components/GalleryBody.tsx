@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Gallery from './Gallery'
 
 const GalleryBody: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
   return (
     <main>
     <div className="slider-area2">

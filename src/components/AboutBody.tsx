@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import About from './About'
 import About2 from './About2'
 import OurTeam from './OurTeam'
 
 const AboutBody: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
   return (
     <main>
         <div className="slider-area2">

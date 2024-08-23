@@ -57,6 +57,7 @@ const Tracker: React.FC = () => {
 
     const handleExerciseSelect = (exercise: string) => {
         setSelectedExercise(exercise)
+        setSet(1)
         window.scrollTo({ top: 200, behavior: 'smooth' })
     }
 
@@ -87,13 +88,21 @@ const Tracker: React.FC = () => {
     const currentExercises = filteredExercises.slice(indexOfFirstExercise, indexOfLastExercise);
 
     const [reps, setReps] = useState<number>(0);
-    const [set, setSet] = useState<number>(0);
+    const [set, setSet] = useState<number>(1);
     const [weight, setWeight] = useState<number>(0);
     const [rows, setRows] = useState<{ exercise: string; reps: number; set: number; weight: number }[]>([]);
 
     const handleAddRow = () => {
+        if (selectedExercise === '' || reps === 0 || set === 0) {
+            alert('Exercise or reps cannot be empty');
+            return;
+        }
         const newRow = { exercise: selectedExercise, reps: reps, set: set, weight: weight };
         setRows([...rows,  newRow]);
+        setReps(0);
+        setSet(set+1);
+        setWeight(0);
+        window.scrollTo({ top: 180 + (rows.length + 1) * 100, behavior: 'smooth' })
     };
     
     const handleDeleteRow = (index: number) => {
@@ -148,6 +157,7 @@ const Tracker: React.FC = () => {
                         placeholder="Selected exercise"
                         value={selectedExercise}
                         disabled
+                        required
                       />
                     </div>
                   </div>
@@ -155,10 +165,12 @@ const Tracker: React.FC = () => {
                     <div className="form-box password-icon mb-30">
                       <input
                         style={{ textTransform: 'none' }}
-                        type="number"
+                        type="text"
                         name="reps"
-                        onChange={(e) => setReps(Number(e.target.value))}
+                        value={`Reps: ${reps}`}
+                        onChange={(e) => setReps(Number(e.target.value.substring(e.target.value.indexOf(' ') + 1)))}
                         placeholder="Reps"
+                        required
                       />
                     </div>
                   </div>
@@ -166,10 +178,13 @@ const Tracker: React.FC = () => {
                     <div className="form-box password-icon mb-30">
                       <input
                         style={{ textTransform: 'none' }}
-                        type="number"
+                        type="text"
                         name="set"
-                        onChange={(e) => setSet(Number(e.target.value))}
+                        value={`Set: ${set}`}
+                        onChange={(e) => setSet(Number(e.target.value.substring(e.target.value.indexOf(' ') + 1)))}
                         placeholder="Set"
+                        disabled
+                        required
                       />
                     </div>
                   </div>
@@ -177,9 +192,10 @@ const Tracker: React.FC = () => {
                     <div className="form-box password-icon mb-30">
                       <input
                         style={{ textTransform: 'none' }}
-                        type="number"
+                        type="text"
                         name="weight"
-                        onChange={(e) => setWeight(Number(e.target.value))}
+                        value={`Weight: ${weight}`}
+                        onChange={(e) => setWeight(Number(e.target.value.substring(e.target.value.indexOf(' ') + 1)))}
                         placeholder="Weight / kg"
                       />
                     </div>
@@ -216,7 +232,6 @@ const Tracker: React.FC = () => {
                                                 style={{ textTransform: 'none' }}
                                                 type="number"
                                                 name="reps"
-                                                placeholder="Reps"
                                                 value={row.reps}
                                                 disabled
                                             />
@@ -228,7 +243,6 @@ const Tracker: React.FC = () => {
                                                 style={{ textTransform: 'none' }}
                                                 type="number"
                                                 name="set"
-                                                placeholder="Set"
                                                 value={row.set}
                                                 disabled
                                             />
@@ -240,8 +254,8 @@ const Tracker: React.FC = () => {
                                                 style={{ textTransform: 'none' }}
                                                 type="number"
                                                 name="weight"
-                                                placeholder="Weight / kg"
                                                 value={row.weight}
+                                                disabled
                                             />
                                         </div>
                                     </div>

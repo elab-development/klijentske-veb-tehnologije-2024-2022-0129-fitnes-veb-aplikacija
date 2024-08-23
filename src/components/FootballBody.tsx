@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import FHero from '../../assets/img/hero/fball_hero.jpg'
 import FBall from '../../assets/img/gallery/football.jpg';
 import Pricing from './Pricing'
@@ -27,6 +27,9 @@ interface FootballProps {
 }
 
 const FootballBody: React.FC<FootballProps> = ({setBoughtProgram}) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
   return (
     <main>
         <div className="slider-area2" style={{backgroundImage: `url(${FHero})`}}>

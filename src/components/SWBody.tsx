@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import Schedule from './Schedule'
 import BBHero from '../../assets/img/hero/sw_hero.jpg'
 import BBall from '../../assets/img/gallery/sworkout.jpg';
@@ -26,7 +26,10 @@ interface SWProps {
     setBoughtProgram: Dispatch<SetStateAction<{ name: string; price: string }>>;
 }
 
-const BoxingBody: React.FC<SWProps> = ({setBoughtProgram}) => {
+const SWBody: React.FC<SWProps> = ({setBoughtProgram}) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
   return (
     <main>
         <div className="slider-area2" style={{backgroundImage: `url(${BBHero})`}}>
@@ -88,4 +91,4 @@ const BoxingBody: React.FC<SWProps> = ({setBoughtProgram}) => {
   )
 }
 
-export default BoxingBody
+export default SWBody

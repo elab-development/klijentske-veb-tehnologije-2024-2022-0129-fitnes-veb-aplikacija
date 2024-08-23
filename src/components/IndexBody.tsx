@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 const services: Program[] = [
     new Program('TRAINING PROGRAM FOR YOUR SPORT', 'Browse through our sport workout programs and find the right one for you and your fitness goals.', <GrRun></GrRun>, '/programs'),
-    new Program('WORKOUT TRACKING', 'Track your workouts and your progress with our easy-to-use fitness tracking feature.', <SlNotebook></SlNotebook>, '/'),
+    new Program('WORKOUT TRACKING', 'Track your workouts and your progress with our easy-to-use fitness tracking feature.', <SlNotebook></SlNotebook>, '/workout_tracker'),
     new Program('1-ON-1 SESSION WITH COACH', 'If you need any help with your fitness journey, our specialized coaches are here to help you out.', <IoPeopleSharp></IoPeopleSharp>, '/programs')
 ];
 
@@ -37,6 +37,7 @@ const IndexBody: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const interval = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
         }, 10000);

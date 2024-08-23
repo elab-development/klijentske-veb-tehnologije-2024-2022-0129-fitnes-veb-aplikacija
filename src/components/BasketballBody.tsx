@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import BasketballSchedule from './Schedule'
 import BBHero from '../../assets/img/hero/bball_hero.jpg'
 import BBall from '../../assets/img/gallery/Basketball.jpg';
@@ -27,6 +27,9 @@ interface BasketballProps {
 }
 
 const BasketballBody: React.FC<BasketballProps> = ({setBoughtProgram}) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
   return (
     <main>
         <div className="slider-area2" style={{backgroundImage: `url(${BBHero})`}}>
