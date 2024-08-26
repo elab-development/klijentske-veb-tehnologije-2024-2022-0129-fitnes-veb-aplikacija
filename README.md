@@ -54,3 +54,9 @@ npm run dev
 ```
 
 After this command you will get the link looking like this: `http://localhost:4000` in your terminal window. Click on it and the app will open in your default browser.
+
+## Testing
+To run the tests, use the following command in your terminal window from the root directory of the project:
+```bash
+npx vitest
+```
