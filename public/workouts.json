@@ -106,5 +106,47 @@
         "weight": 25
       }
     ]
+  },
+  {
+    "username": "admin",
+    "date": "2024-08-26T14:14:42.074Z",
+    "workoutData": [
+      {
+        "exercise": "Push-ups",
+        "reps": 10,
+        "set": 1,
+        "weight": 20
+      },
+      {
+        "exercise": "Push-ups",
+        "reps": 12,
+        "set": 2,
+        "weight": 25
+      },
+      {
+        "exercise": "Push-ups",
+        "reps": 10,
+        "set": 3,
+        "weight": 30
+      }
+    ]
+  },
+  {
+    "username": "test",
+    "date": "2024-08-26T14:32:38.892Z",
+    "workoutData": [
+      {
+        "exercise": "Push-ups",
+        "reps": 20,
+        "set": 1,
+        "weight": 5
+      },
+      {
+        "exercise": "Push-ups",
+        "reps": 20,
+        "set": 2,
+        "weight": 10
+      }
+    ]
   }
 ]

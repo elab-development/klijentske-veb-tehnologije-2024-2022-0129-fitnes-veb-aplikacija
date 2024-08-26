@@ -10,5 +10,11 @@
     "fullName": "Nemanja Djukic",
     "email": "nd@nd",
     "password": "athletex"
+  },
+  {
+    "username": "test",
+    "fullName": "test test9",
+    "email": "test@test",
+    "password": "test"
   }
 ]

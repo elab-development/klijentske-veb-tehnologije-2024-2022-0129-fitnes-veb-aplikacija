@@ -10,7 +10,7 @@ import { IoAccessibility } from "react-icons/io5";
 
 const programs: Program[] = [
     new Program('FOOTBALL', 'Transform Your Game: Reach Pro-Level Football Performance', <IoMdFootball></IoMdFootball>, '/programs/football'),
-    new Program('TENIS', 'NOLE DJOLE, DJOLE NOLE, NOVAK DJOKOVIC THE GOAT OF TENIS', <IoIosTennisball></IoIosTennisball>, '/tennis'),
+    new Program('TENIS', 'Elevate Your Game: Dominate with Our Premier Tennis Program', <IoIosTennisball></IoIosTennisball>, '/tennis'),
     new Program('BASKETBALL', 'Unlock Your Basketball Potential: Elevate Your Game to Pro Level', <FaBasketball></FaBasketball>, '/programs/basketball'),
     new Program('BOXING', 'Ignite Your Inner Champion: Transform with Our Elite Boxing Program', <PiBoxingGloveFill></PiBoxingGloveFill>, '/programs/boxing'),
     new Program('GYM', 'Elevate Your Fitness: Dominate Your Goals with Our Gym Workout Plan', <TbBarbell></TbBarbell>, '/programs/gym'),

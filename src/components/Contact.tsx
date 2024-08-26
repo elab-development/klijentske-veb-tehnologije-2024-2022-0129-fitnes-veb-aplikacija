@@ -67,11 +67,12 @@ const Contact: React.FC = () => {
                                             <select name="program" id="program" defaultValue={'0'} required style={{color: 'gray', width: '100%', height: '45px', background: 'transparent', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderBottom: '2px solid #e9f0f4', fontSize: '16px', padding: '10px 22px', paddingRight: '30px', fontWeight: '500'}}>
                                                 <option value="0" disabled>Select your program</option>
                                                 <option value="No program/new member">No program/new member</option>
-                                                <option value="Boxing">Boxing</option>
-                                                <option value="Basketball">Basketball</option>
+                                                <option value="Football">Football</option>
                                                 <option value="Tennis">Tennis</option>
-                                                <option value="Group Fitness">Group Fitness</option>
-                                                <option value="One on One Session">One on One Session</option>
+                                                <option value="Basketball">Basketball</option>
+                                                <option value="Boxing">Boxing</option>
+                                                <option value="Gym">Gym</option>
+                                                <option value="Street Workout">Street Workout</option>
                                             </select>
                                         </div>
                                     </div>
