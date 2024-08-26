@@ -73,7 +73,7 @@ const Header: React.FC = () => {
                           )}
                         </div>
                       ) : (
-                        <Link to="/login" className="btn header-btn">Become a member</Link>
+                        <Link to="/login" role='button' className="btn header-btn" >Become a member</Link>
                       )}
                     </div>
                   </div>

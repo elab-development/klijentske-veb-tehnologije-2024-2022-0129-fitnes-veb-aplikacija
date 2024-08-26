@@ -9,7 +9,6 @@ import { FaBasketballBall } from "react-icons/fa";
 
 describe('OneProgram Component', () => {
   it('renders the program details correctly', () => {
-    // Arrange: Create a mock program object
     const program: Program = {
       name: 'Basketball Training',
       description: 'Improve your basketball skills with our program.',
@@ -17,14 +16,12 @@ describe('OneProgram Component', () => {
       image: <FaBasketballBall data-testid="basketball-icon"/>
     };
 
-    // Act: Render the component with the mock program
     render(
       <Router>
         <OneProgram program={program} />
       </Router>
     );
 
-    // Assert: Check if the program details are rendered correctly
     expect(screen.getByText('Basketball Training')).toBeInTheDocument();
     expect(screen.getByText('Improve your basketball skills with our program.')).toBeInTheDocument();
     expect(screen.getByText('Discover More')).toBeInTheDocument();
