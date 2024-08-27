@@ -7451,3 +7451,12 @@ del {
     padding-bottom: 5%;
     border-bottom: 2px solid #dee2e6;
 }
+
+.show-pass-btn {
+    position: absolute;
+    top: 45%;
+    right: 8%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

@@ -131,9 +131,8 @@ const Tracker: React.FC = () => {
             workoutData: rows
         }
         try {
-            const response = await axios.post('http://localhost:5000/api/saveWorkout', workoutData);
-            console.log('Workout saved successfully', response.data);
-            alert('Workout saved successfully');
+            await axios.post('http://localhost:5000/api/saveWorkout', workoutData);
+            alert('Workout saved successfully. Visit your profile page to see your workout analytics.');
             setRows([]);
         } catch (error) {
             console.error('Error saving workout:', error);

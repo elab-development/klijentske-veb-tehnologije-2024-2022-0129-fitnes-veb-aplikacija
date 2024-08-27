@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { User } from '../models/user';
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -60,6 +62,30 @@ const Register: React.FC = () => {
     }
   };
 
+  const [showedPass, setShowedPass] = useState<boolean>(false);
+  const showPassword = () => {
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      setShowedPass(true);
+    } else {
+      passwordInput.type = 'password';
+      setShowedPass(false);
+    }
+  }
+
+  const [showedRPass, setShowedRPass] = useState<boolean>(false);
+  const showRPassword = () => {
+    const passwordInput = document.getElementById('retype-password') as HTMLInputElement;
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      setShowedRPass(true);
+    } else {
+      passwordInput.type = 'password';
+      setShowedRPass(false);
+    }
+  }
+
   return (
     <section className="contact-form-main" style={{ height: '100%', margin: 0 }}>
       <div className="container">
@@ -100,12 +126,14 @@ const Register: React.FC = () => {
                   </div>
                   <div className="col-lg-12 col-md-6">
                     <div className="form-box email-icon mb-30">
-                      <input type="password" name="password" style={{ textTransform: 'none' }} placeholder="Password" value={formData.password} onChange={handleChange} />
+                      <input id="password" type="password" name="password" style={{ textTransform: 'none' }} placeholder="Password" value={formData.password} onChange={handleChange} />
+                      <i className="show-pass-btn" onClick={showPassword}>{ showedPass ? <FaRegEyeSlash style={{ width: "20px", height: "20px" }} /> : <FaRegEye style={{ width: "20px", height: "20px" }} />}</i>
                     </div>
                   </div>
                   <div className="col-lg-12 col-md-6">
                     <div className="form-box user-icon mb-30">
-                      <input type="password" name="retypePassword" style={{ textTransform: 'none' }} placeholder="Retype Password" value={formData.retypePassword} onChange={handleChange} />
+                      <input id="retype-password" type="password" name="retypePassword" style={{ textTransform: 'none' }} placeholder="Retype Password" value={formData.retypePassword} onChange={handleChange} />
+                      <i className="show-pass-btn" onClick={showRPassword}>{ showedRPass ? <FaRegEyeSlash style={{ width: "20px", height: "20px" }} /> : <FaRegEye style={{ width: "20px", height: "20px" }} />}</i>
                     </div>
                   </div>
                   <div className="col-lg-12" style={{ marginTop: '70px' }}>

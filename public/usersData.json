@@ -16,5 +16,11 @@
     "fullName": "test test9",
     "email": "test@test",
     "password": "test"
+  },
+  {
+    "username": "jelena",
+    "fullName": "jelena djukic",
+    "email": "proba@proba",
+    "password": "anastasija22"
   }
 ]

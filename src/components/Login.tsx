@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { User } from '../models/user';
 import axios from 'axios';
 import { useUser } from '../contexts/UserContext';
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -33,6 +35,18 @@ const Login: React.FC = () => {
       console.error('Error fetching user data:', error);
     }
   };
+
+  const [showedPass, setShowedPass] = useState<boolean>(false);
+  const showPassword = () => {
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      setShowedPass(true);
+    } else {
+      passwordInput.type = 'password';
+      setShowedPass(false);
+    }
+  }
 
   return (
     <section className="contact-form-main" style={{ height: "100%", margin: 0 }}>
@@ -67,6 +81,7 @@ const Login: React.FC = () => {
                   <div className="col-lg-12 col-md-6">
                     <div className="form-box password-icon mb-30">
                       <input
+                        id='password'
                         style={{ textTransform: 'none' }}
                         type="password"
                         name="password"
@@ -74,6 +89,7 @@ const Login: React.FC = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
                       />
+                      <i className="show-pass-btn" onClick={showPassword}>{ showedPass ? <FaRegEyeSlash style={{ width: "20px", height: "20px" }} /> : <FaRegEye style={{ width: "20px", height: "20px" }} />}</i>
                     </div>
                   </div>
                   <div className="col-lg-12" style={{ marginTop: "70px" }}>

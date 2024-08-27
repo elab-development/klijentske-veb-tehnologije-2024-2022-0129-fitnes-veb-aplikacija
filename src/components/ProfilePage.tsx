@@ -35,6 +35,7 @@ const ProfilePage: React.FC = () => {
   const [changeMade, setChangeMade] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (user) {
       setUsername(user.username);
       setFirstName(user.fullName.split(' ')[0]);
@@ -95,6 +96,7 @@ const ProfilePage: React.FC = () => {
 
     const handleCategorySelect = (category: number) => {
       setSelectedCategory(category);
+      window.scrollTo(0, 400);
     };
 
 
